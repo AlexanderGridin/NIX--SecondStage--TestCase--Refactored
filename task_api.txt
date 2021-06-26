@@ -1,0 +1,5 @@
+admin_pass: nkAwQi8UQfoH
+admin_name: admin
+
+db_name/user_name: f0541354_task_api
+db_pass: oLdnmMUCSpxl

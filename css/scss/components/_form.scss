@@ -1,0 +1,67 @@
+// form__label
+.form__label
+{
+  display: block;
+  color: $layout-accent-color-lighter;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+// form__item-checkbox
+.form__item-checkbox
+{
+  display: flex;
+  align-items: center;
+  transform: translateY(-50%);
+}
+
+.form__item-checkbox .form__label
+{
+  margin: 0;
+  color: $text-primary-color;
+  font-weight: 400;
+}
+
+// form__checkbox
+.form__checkbox
+{
+  appearance: none;
+  border: 1px solid $layout-accent-color;
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+
+  &:hover
+  {
+    cursor: pointer;
+  }
+
+  &:checked
+  {
+    background-color: $layout-accent-color;
+    background-image: url(../imgs/check.svg);
+    background-size: 12px 9px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.form__checkbox--left
+{
+  margin-right: 12px;
+}
+
+// Form Modifiers
+.form--horizontal
+{
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.form--horizontal > div + div
+{
+  margin-left: 24px;
+}
+
+

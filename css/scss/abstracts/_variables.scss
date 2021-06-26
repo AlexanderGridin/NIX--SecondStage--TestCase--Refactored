@@ -1,0 +1,28 @@
+// BREAKPOINTS
+$bp-tablet: 768px;
+$bp-laptop: 991px;
+$bp-desktop: 1199px;
+
+// COLORS
+// -- text
+$text-primary-color: #B6B4C6;
+$text-secondary-color: #FFF;
+$text-accent-color: #8F7FFF;
+$text-accent-color-lighter: #C7BFFF;
+
+// -- button
+$button-primary-color: #8F7FFF;
+$button-primay-text-color: #FFF;
+
+// -- link
+$link-primary-color: #8F7FFF;
+
+// -- layout
+$layout-primary-color: #171E28;
+$layout-secondary-color: #242B35;
+$layout-secondary-color-lighter: #3D444E;
+$layout-accent-color: #8F7FFF;
+$layout-accent-color-lighter: #C7BFFF;
+
+// -- gradients
+$primary-top-to-bottom-gradient: linear-gradient(0deg, rgba(191,186,250,1) 0%, rgba(97,74,254,1) 100%);

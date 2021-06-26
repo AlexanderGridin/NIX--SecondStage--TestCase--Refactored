@@ -1,0 +1,74 @@
+.horizontal-nav
+{
+
+}
+
+.horizontal-nav__mobile-button
+{
+  display: none;
+}
+
+.horizontal-nav__list
+{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.horizontal-nav__link:link,
+.horizontal-nav__link:visited
+{
+  display: inline-block;
+  padding: 25px 24px;
+  display: flex;
+  align-items: center;
+  color: $text-primary-color;
+  position: relative;
+  font-weight: 600;
+  transition: 0.4s;
+}
+
+.horizontal-nav__link::before
+{
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-color: $layout-accent-color;
+  margin-right: 4px;
+}
+
+.horizontal-nav__link::after
+{
+  content: "";
+  display: block;
+  height: 3px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  background-color: $layout-accent-color;
+  background-image: $primary-top-to-bottom-gradient;
+  transition: opacity 0.4s;
+  opacity: 0;
+}
+
+.horizontal-nav__link:hover::after,
+.horizontal-nav__link.current::after
+{ 
+  opacity: 1;
+}
+
+.horizontal-nav__link:hover,
+.horizontal-nav__link.current
+{
+  background-color: $layout-secondary-color-lighter;
+  text-decoration: none;
+  color: $layout-accent-color;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
