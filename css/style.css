@@ -922,6 +922,10 @@ th {
   width: 100%;
 }
 
+.widgets__flex-layout .flex-layout__item + .flex-layout__item {
+  margin-left: 24px;
+}
+
 .widget {
   background-color: #242B35;
   border-radius: 7px;
