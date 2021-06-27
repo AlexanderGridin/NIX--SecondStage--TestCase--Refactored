@@ -1,0 +1,18 @@
+.table__rows-per-page-form .form__item-select
+{
+  display: flex;
+  align-items: center;
+}
+
+.table__rows-per-page-form .form__item-select .form__label
+{
+  font-weight: 400;
+  margin: 0;
+  margin-right: 12px;
+  color: $text-primary-color;
+}
+
+.table__rows-per-page-form .form__item-select .form__select
+{
+  padding: 16px 30px 16px 16px;
+}

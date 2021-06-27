@@ -1,0 +1,12 @@
+.tasks-table__footer
+{
+  align-items: center;
+  display: flex;
+  padding-left: 30px;
+  padding-top: 20px;
+}
+
+.tasks-table__footer-col + .tasks-table__footer-col
+{
+  margin-left: 12px;
+}

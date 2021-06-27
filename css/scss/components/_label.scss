@@ -1,32 +1,32 @@
 .label:link,
 .label:visited
 {
-  display: inline-block;
-  padding: 3px 12px;
-  color: $text-secondary-color;
+  background-color: $layout-accent-color-medium-darker;
   border-radius: 3px;
+  color: $text-secondary-color;
+  display: inline-block;
+  margin-left: 12px;
+  padding: 3px 12px;
   position: relative;
   z-index: 2;
-  margin-left: 12px;
-  background-color: $layout-accent-color-medium-darker;
 
   // Label gradient background
   &::before
   {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
     background-color: $layout-accent-color;
     background-image: $primary-left-to-right-gradient;
-    z-index: -1;
     border-radius: 3px;
-    width: 100%;
-    transition: 0.4s;
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
     opacity: 1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 0.4s;
+    width: 100%;
+    z-index: -1;
   }
 
   // Label hover
@@ -36,24 +36,24 @@
 
     &::before
     {
-      width: 0;
       opacity: 0;
+      width: 0;
     }
   }
 
   // Label left corner
   &::after
   {
+    background-color: $layout-accent-color-medium-darker;
+    border-radius: 3px;
     content: "";
     display: block;
+    height: 20px;
+    left: -8px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%) rotate(-45deg);
-    left: -8px;
-    background-color: $layout-accent-color-medium-darker;
     width: 20px;
-    height: 20px;
-    border-radius: 3px;
     z-index: -2;
   }
 }

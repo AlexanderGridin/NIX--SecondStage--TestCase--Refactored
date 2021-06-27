@@ -69,6 +69,12 @@
   display: flex;
 }
 
+.widget__field-label,
+.widget__field-value
+{
+  word-break: break-word;
+}
+
 .widget__field-label
 {
   flex-shrink: 0;
@@ -103,6 +109,7 @@
 // List Table view
 .widget__list--table-view .widget__field
 {
+  align-items: center;
   border-bottom: 1px solid $layout-secondary-color-lighter;
   padding: 8px 0;
   width: 100%;
@@ -169,20 +176,20 @@
 }
 
 // Widget Medium
-.widget--medium
+.widget--md
 {
   max-width: 648px;
   width: 100%;
 }
 
-.widget--medium .widget__content-col
+.widget--md .widget__content-col
 {
   max-width: 241px;
   width: 100%;
 }
 
 // Widget Large
-.widget--large .widget__content-col
+.widget--lg .widget__content-col
 {
   max-width: 576px;
   width: 100%;
