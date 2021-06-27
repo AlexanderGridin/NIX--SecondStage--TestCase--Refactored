@@ -1,0 +1,9 @@
+.tasks__section-title
+{
+  display: none;
+
+  @include tablet
+  {
+    display: block;
+  }
+}

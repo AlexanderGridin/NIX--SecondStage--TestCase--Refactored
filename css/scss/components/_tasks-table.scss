@@ -4,9 +4,261 @@
   display: flex;
   padding-left: 30px;
   padding-top: 20px;
+  font-size: 1rem;
+
+  @include phone
+  {
+    flex-direction: column;
+    padding-left: 0;
+  }
 }
 
 .tasks-table__footer-col + .tasks-table__footer-col
 {
   margin-left: 12px;
+
+  @include phone
+  {
+    margin-left: 0;
+    margin-top: 15px;
+  }
+}
+
+// tasks-table--pseudo
+.tasks-table--pseudo
+{
+  width: 100%;
+  font-size: 0.85rem;
+
+  @include tablet
+  {
+    font-size: 1rem;
+  }
+}
+
+.tasks-table--pseudo .tasks-table__header
+{
+  margin-bottom: 8px;
+
+  @include tablet
+  {
+    display: none;
+  }
+}
+
+.tasks-table--pseudo .tasks-table__header .tasks-table__row
+{
+  background-color: #2D333D;
+}
+
+.tasks-table--pseudo .tasks-table__body
+{
+  @include tablet
+  {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+.tasks-table--pseudo .tasks-table__body .tasks-table__row:nth-child(even)
+{
+  background-color: #242B35;
+}
+
+.tasks-table--pseudo .tasks-table__body .tasks-table__row:nth-child(odd)
+{
+  background-color: #1E242F;
+
+  @include tablet
+  {
+    margin-right: 15px;
+  }
+
+  @include phone
+  {
+    margin-right: 0;
+  }
+}
+
+.tasks-table--pseudo .tasks-table__row + .tasks-table__row
+{
+  margin-top: 8px;
+
+  @include tablet
+  {
+    margin-top: 0;
+  }
+}
+
+.tasks-table--pseudo .tasks-table__row
+{
+  display: flex;
+  // border: 1px solid red;
+  justify-content: space-between;
+  padding: 0 30px;
+  border-radius: 7px;
+
+  @include tablet
+  {
+    display: block;
+    width: 49%;
+    margin-bottom: 15px;
+    padding: 30px;
+  }
+
+  @include phone
+  {
+    width: 100%;
+    padding: 30px 15px;
+  }
+}
+
+.tasks-table--pseudo .tasks-table__header-cell,
+.tasks-table--pseudo .tasks-table__cell
+{
+  // border: 1px solid orange;
+  width: 100%;
+  max-width: 12.5%;
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  margin: 0 5px;
+
+  @include tablet
+  {
+    align-items: flex-start;
+  }
+}
+
+.tasks-table--pseudo .tasks-table__header-cell:nth-child(1),
+.tasks-table--pseudo .tasks-table__cell:nth-child(1)
+{
+  max-width: 160px;
+
+  @include tablet
+  {
+    max-width: none;
+  }
+}
+
+.tasks-table--pseudo .tasks-table__header-cell:nth-child(2),
+.tasks-table--pseudo .tasks-table__cell:nth-child(2)
+{
+  max-width: 170px;
+
+  @include tablet
+  {
+    max-width: none;
+  }
+}
+
+.tasks-table--pseudo .tasks-table__header-cell:nth-child(3),
+.tasks-table--pseudo .tasks-table__cell:nth-child(3)
+{
+  max-width: 150px;
+
+  @include tablet
+  {
+    max-width: none;
+  }
+}
+
+.tasks-table--pseudo .tasks-table__header-cell:nth-child(4),
+.tasks-table--pseudo .tasks-table__cell:nth-child(4)
+{
+  max-width: 103px;
+
+  @include tablet
+  {
+    max-width: none;
+  }
+}
+
+.tasks-table--pseudo .tasks-table__header-cell:nth-child(5),
+.tasks-table--pseudo .tasks-table__cell:nth-child(5)
+{
+  max-width: 100px;
+  text-align: right;
+
+  @include tablet
+  {
+    max-width: none;
+    text-align: left;
+  }
+}
+
+.tasks-table--pseudo .tasks-table__header-cell:nth-child(6),
+.tasks-table--pseudo .tasks-table__cell:nth-child(6)
+{
+  max-width: 135px;
+  text-align: right;
+
+  @include tablet
+  {
+    max-width: none;
+    text-align: left;
+  }
+}
+
+.tasks-table--pseudo .tasks-table__header-cell:nth-child(7),
+.tasks-table--pseudo .tasks-table__cell:nth-child(7)
+{
+  max-width: 134px;
+  text-align: right;
+
+  @include tablet
+  {
+    max-width: none;
+    text-align: left;
+  }
+}
+
+.tasks-table--pseudo .tasks-table__header-cell:nth-child(8),
+.tasks-table--pseudo .tasks-table__cell:nth-child(8)
+{
+  max-width: 75px;
+  text-align: right;
+
+  @include tablet
+  {
+    max-width: none;
+    text-align: left;
+  }
+}
+
+.tasks-table--pseudo .tasks-table__header-cell
+{
+  font-weight: 700;
+  color: $text-secondary-color;
+}
+
+.tasks-table--pseudo .tasks-table__cell
+{
+  @include tablet
+  {
+    // border: 1px solid green;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.tasks-table--pseudo .tasks-table__cell-label
+{
+  display: none;
+  max-width: 150px;
+  width: 100%;
+  margin-right: 25px;
+  font-weight: 700;
+  color: $text-secondary-color;
+
+  @include tablet
+  {
+    display: block;
+  }
+}
+
+.tasks-table--pseudo .tasks-table__cell-content
+{
+  width: 100%;
 }

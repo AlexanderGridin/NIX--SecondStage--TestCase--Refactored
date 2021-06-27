@@ -194,6 +194,7 @@
         <div class="widgets__flex-container-item">
           <div class="widget widget--md">
             <h2 class="widget__title">Project information</h2>
+
             <div class="widget__content widget__content--fixed-height">
               <div class="widget__field">
                 <div class="widget__field-label widget__field-label--colored">Project name</div>
@@ -244,7 +245,7 @@
               <div class="widget__field">
                 <div class="widget__field-label widget__field-label--colored">Status</div>
                 <div class="widget__field-value">
-                  <div class="status status--non-completed">Non Completed</div>
+                  <div class="status status--error">Non Completed</div>
                 </div>
               </div>
               <div class="widget__field">
@@ -405,8 +406,8 @@
             </div>
           </div>
         </div>
-        <div class="widgets__flex-container-item">
-          <div class="widget widget--lg margin-bottom-0">
+        <div class="widgets__flex-container-item margin-bottom-0">
+          <div class="widget widget--lg">
             <h2 class="widget__title">Efficiency</h2>
 
             <div class="widget__content widget__flex-content">
@@ -456,86 +457,258 @@
       </div>
     </div>
 
-    <!-- <section class="tasks-table section">
+    <section class="tasks section">
       <div class="container">
         <div class="section__header">
-          <h2 class="visually-hidden">Tasks</h2>
+          <h2 class="section__title tasks__section-title">Tasks</h2>
         </div>
-        
+
         <div class="section__body">
-          <table class="table">
-            <thead class="table__header">
-              <tr class="table__row">
-                <th class="table__header-cell">Task name</th>
-                <th class="table__header-cell">Developer</th>
-                <th class="table__header-cell">Work Type</th>
-                <th class="table__header-cell">Status</th>
-                <th class="table__header-cell">Estimation (h)</th>
-                <th class="table__header-cell">Total time spent by All</th>
-                <th class="table__header-cell">My Time spend by Period (h)</th>
-                <th class="table__header-cell">Efficiency</th>
-              </tr>
-            </thead>
-            <tbody class="table__body">
-              <tr class="table__row">
-                <td class="table__cell">Search page mockup</td>
-                <td class="table__cell">Robert Fox, Kent Peacock… Show more (6)</td>
-                <td class="table__cell">Programming, Meetings... Show more (3)</td>
-                <td class="table__cell">Сompleted</td>
-                <td class="table__cell">0.0</td>
-                <td class="table__cell">232.17</td>
-                <td class="table__cell">23.00</td>
-                <td class="table__cell">100%</td>
-              </tr>
-            </tbody>
-          </table>
-        
-          <div class="tasks-table__footer">
-            <div class="tasks-table__footer-col">
-              <form class="table__rows-per-page-form" action="#">
-                <div class="form__item form__item-select">
-                  <label class="form__label" for="dev">Rows per page</label>
-                  <select class="form__select" name="rows-per-page" id="rows-per-page">
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="30">30</option>
-                  </select>
+          <div class="tasks-table tasks-table--pseudo">
+            <div class="tasks-table__header">
+              <div class="tasks-table__row">
+                <div class="tasks-table__header-cell">
+                  <div class="tasks-table__cell-content">Task name</div>
                 </div>
-              </form>
+                <div class="tasks-table__header-cell">
+                  <div class="tasks-table__cell-content">Developer</div>
+                </div>
+                <div class="tasks-table__header-cell">
+                  <div class="tasks-table__cell-content">Work Type</div>
+                </div>
+                <div class="tasks-table__header-cell">
+                  <div class="tasks-table__cell-content">Status</div>
+                </div>
+                <div class="tasks-table__header-cell">
+                  <div class="tasks-table__cell-content">Estimation (h)</div>
+                </div>
+                <div class="tasks-table__header-cell">
+                  <div class="tasks-table__cell-content">Total time spent by All</div>
+                </div>
+                <div class="tasks-table__header-cell">
+                  <div class="tasks-table__cell-content">My Time spent by Period (h)</div>
+                </div>
+                <div class="tasks-table__header-cell">
+                  <div class="tasks-table__cell-content">Efficiency</div>
+                </div>
+              </div>
             </div>
-            <div class="tasks-table__footer-col">
-              <div class="table__rows-summary">1-10 of 20</div>
+
+            <div class="tasks-table__body">
+              <div class="tasks-table__row">
+                <div class="tasks-table__cell">
+                  <div class="tasks-table__cell-label">Task name</div>
+                  <div class="tasks-table__cell-content">
+                    <a href="#">Search page mockup</a>
+                  </div>
+                </div>
+                <div class="tasks-table__cell">
+                  <div class="tasks-table__cell-label">Developer</div>
+                  <div class="tasks-table__cell-content">
+                    Robert Fox,<br>Kent Peacock…<br><a href="#">Show more (6)</a>
+                  </div>
+                </div>
+                <div class="tasks-table__cell">
+                  <div class="tasks-table__cell-label">Work Type</div>
+                  <div class="tasks-table__cell-content">
+                    Programming,<br>Meetings...<br><a href="#">Show more (3)</a>
+                  </div>
+                </div>
+                <div class="tasks-table__cell status status--success">
+                  <div class="tasks-table__cell-label">Status</div>
+                  <div class="tasks-table__cell-content">Сompleted</div>
+                </div>
+                <div class="tasks-table__cell">
+                  <div class="tasks-table__cell-label">Estimation (h)</div>
+                  <div class="tasks-table__cell-content">0.0</div>
+                </div>
+                <div class="tasks-table__cell">
+                  <div class="tasks-table__cell-label">Total time spent by All</div>
+                  <div class="tasks-table__cell-content">232.17</div>
+                </div>
+                <div class="tasks-table__cell">
+                  <div class="tasks-table__cell-label">My Time spent by Period (h)</div>
+                  <div class="tasks-table__cell-content">23.00</div>
+                </div>
+                <div class="tasks-table__cell">
+                  <div class="tasks-table__cell-label">Efficiency</div>
+                  <div class="tasks-table__cell-content">100%</div>
+                </div>
+              </div>
+              
+              <div class="tasks-table__row">
+                <div class="tasks-table__cell">
+                  <div class="tasks-table__cell-label">Task name</div>
+                  <div class="tasks-table__cell-content">
+                    <a href="#">Search page mockup</a>
+                  </div>
+                </div>
+                <div class="tasks-table__cell">
+                  <div class="tasks-table__cell-label">Developer</div>
+                  <div class="tasks-table__cell-content">
+                    Robert Fox,<br>Kent Peacock…<br><a href="#">Show more (6)</a>
+                  </div>
+                </div>
+                <div class="tasks-table__cell">
+                  <div class="tasks-table__cell-label">Work Type</div>
+                  <div class="tasks-table__cell-content">
+                    Programming,<br>Meetings...<br><a href="#">Show more (3)</a>
+                  </div>
+                </div>
+                <div class="tasks-table__cell status status--success">
+                  <div class="tasks-table__cell-label">Status</div>
+                  <div class="tasks-table__cell-content">Сompleted</div>
+                </div>
+                <div class="tasks-table__cell">
+                  <div class="tasks-table__cell-label">Estimation (h)</div>
+                  <div class="tasks-table__cell-content">0.0</div>
+                </div>
+                <div class="tasks-table__cell">
+                  <div class="tasks-table__cell-label">Total time spent by All</div>
+                  <div class="tasks-table__cell-content">232.17</div>
+                </div>
+                <div class="tasks-table__cell">
+                  <div class="tasks-table__cell-label">My Time spent by Period (h)</div>
+                  <div class="tasks-table__cell-content">23.00</div>
+                </div>
+                <div class="tasks-table__cell">
+                  <div class="tasks-table__cell-label">Efficiency</div>
+                  <div class="tasks-table__cell-content">100%</div>
+                </div>
+              </div>
+
+              <div class="tasks-table__row">
+                <div class="tasks-table__cell">
+                  <div class="tasks-table__cell-label">Task name</div>
+                  <div class="tasks-table__cell-content">
+                    <a href="#">Search page mockup</a>
+                  </div>
+                </div>
+                <div class="tasks-table__cell">
+                  <div class="tasks-table__cell-label">Developer</div>
+                  <div class="tasks-table__cell-content">
+                    Robert Fox,<br>Kent Peacock…<br><a href="#">Show more (6)</a>
+                  </div>
+                </div>
+                <div class="tasks-table__cell">
+                  <div class="tasks-table__cell-label">Work Type</div>
+                  <div class="tasks-table__cell-content">
+                    Programming,<br>Meetings...<br><a href="#">Show more (3)</a>
+                  </div>
+                </div>
+                <div class="tasks-table__cell status status--success">
+                  <div class="tasks-table__cell-label">Status</div>
+                  <div class="tasks-table__cell-content">Сompleted</div>
+                </div>
+                <div class="tasks-table__cell">
+                  <div class="tasks-table__cell-label">Estimation (h)</div>
+                  <div class="tasks-table__cell-content">0.0</div>
+                </div>
+                <div class="tasks-table__cell">
+                  <div class="tasks-table__cell-label">Total time spent by All</div>
+                  <div class="tasks-table__cell-content">232.17</div>
+                </div>
+                <div class="tasks-table__cell">
+                  <div class="tasks-table__cell-label">My Time spent by Period (h)</div>
+                  <div class="tasks-table__cell-content">23.00</div>
+                </div>
+                <div class="tasks-table__cell">
+                  <div class="tasks-table__cell-label">Efficiency</div>
+                  <div class="tasks-table__cell-content">100%</div>
+                </div>
+              </div>
+
+              <div class="tasks-table__row">
+                <div class="tasks-table__cell">
+                  <div class="tasks-table__cell-label">Task name</div>
+                  <div class="tasks-table__cell-content">
+                    <a href="#">Search page mockup</a>
+                  </div>
+                </div>
+                <div class="tasks-table__cell">
+                  <div class="tasks-table__cell-label">Developer</div>
+                  <div class="tasks-table__cell-content">
+                    Robert Fox,<br>Kent Peacock…<br><a href="#">Show more (6)</a>
+                  </div>
+                </div>
+                <div class="tasks-table__cell">
+                  <div class="tasks-table__cell-label">Work Type</div>
+                  <div class="tasks-table__cell-content">
+                    Programming,<br>Meetings...<br><a href="#">Show more (3)</a>
+                  </div>
+                </div>
+                <div class="tasks-table__cell status status--success">
+                  <div class="tasks-table__cell-label">Status</div>
+                  <div class="tasks-table__cell-content">Сompleted</div>
+                </div>
+                <div class="tasks-table__cell">
+                  <div class="tasks-table__cell-label">Estimation (h)</div>
+                  <div class="tasks-table__cell-content">0.0</div>
+                </div>
+                <div class="tasks-table__cell">
+                  <div class="tasks-table__cell-label">Total time spent by All</div>
+                  <div class="tasks-table__cell-content">232.17</div>
+                </div>
+                <div class="tasks-table__cell">
+                  <div class="tasks-table__cell-label">My Time spent by Period (h)</div>
+                  <div class="tasks-table__cell-content">23.00</div>
+                </div>
+                <div class="tasks-table__cell">
+                  <div class="tasks-table__cell-label">Efficiency</div>
+                  <div class="tasks-table__cell-content">100%</div>
+                </div>
+              </div>
             </div>
-            <div class="tasks-table__footer-col">
-              <div class="pagination pagination--small">
-                <button class="pagination__button pagination__button-prev pagination__button--disabled" type="button"
-                  disabled>
-                  <svg class="pagination__button-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 12L10 8L6 4" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                  Previous page
-                </button>
-                <ul class="pagination__list">
-                  <li class="pagination__list-item">
-                    <button class="pagination__button current" type="button">1</button>
-                  </li>
-                  <li class="pagination__list-item">
-                    <button class="pagination__button" type="button">2</button>
-                  </li>
-                </ul>
-                <button class="pagination__button pagination__button-next" type="button">
-                  Next page
-                  <svg class="pagination__button-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 12L10 8L6 4" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </button>
+
+            <div class="tasks-table__footer">
+              <div class="tasks-table__footer-col">
+                <form class="table__rows-per-page-form" action="#">
+                  <div class="form__item form__item-select">
+                    <label class="form__label" for="dev">Rows per page</label>
+                    <select class="form__select" name="rows-per-page" id="rows-per-page">
+                      <option value="10">10</option>
+                      <option value="20">20</option>
+                      <option value="30">30</option>
+                    </select>
+                  </div>
+                </form>
+              </div>
+
+              <div class="tasks-table__footer-col">
+                <div class="table__rows-summary">1-10 of 20</div>
+              </div>
+
+              <div class="tasks-table__footer-col">
+                <div class="pagination pagination--small">
+                  <button class="pagination__button pagination__button-prev pagination__button--disabled" type="button" disabled>
+                    <svg class="pagination__button-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6 12L10 8L6 4" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Previous page
+                  </button>
+                  <ul class="pagination__list">
+                    <li class="pagination__list-item">
+                      <button class="pagination__button current" type="button">1</button>
+                    </li>
+                    <li class="pagination__list-item">
+                      <button class="pagination__button" type="button">2</button>
+                    </li>
+                  </ul>
+                  <button class="pagination__button pagination__button-next" type="button">
+                    Next page
+                    <svg class="pagination__button-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6 12L10 8L6 4" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section> -->
+    </section>
   </main>
 
   <footer class="footer">

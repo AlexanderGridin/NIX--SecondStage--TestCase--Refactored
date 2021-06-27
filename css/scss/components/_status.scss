@@ -1,4 +1,9 @@
-.status--non-completed
+.status--error
 {
   color: $error-color;
+}
+
+.status--success
+{
+  color: $success-color;
 }

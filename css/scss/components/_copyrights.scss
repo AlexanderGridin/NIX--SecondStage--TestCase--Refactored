@@ -1,4 +1,9 @@
 .copyrights
 {
   text-align: center;
+
+  @include phone
+  {
+    font-size: 0.86rem;
+  }
 }
