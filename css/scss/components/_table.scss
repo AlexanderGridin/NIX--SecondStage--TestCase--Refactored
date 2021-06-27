@@ -1,15 +1,15 @@
 .table__rows-per-page-form .form__item-select
 {
-  display: flex;
   align-items: center;
+  display: flex;
 }
 
 .table__rows-per-page-form .form__item-select .form__label
 {
+  color: $text-primary-color;
   font-weight: 400;
   margin: 0;
   margin-right: 12px;
-  color: $text-primary-color;
 }
 
 .table__rows-per-page-form .form__item-select .form__select

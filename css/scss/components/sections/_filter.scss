@@ -5,14 +5,14 @@
 
 .filter__form
 {
-  display: flex;
   align-items: flex-end;
+  display: flex;
   flex-wrap: wrap;
 
   @include tablet
   {
-    flex-direction: column;
     align-items: flex-start;
+    flex-direction: column;
   }
 }
 
@@ -51,15 +51,15 @@
 
 .filter__form .form__actions
 {
-  display: flex;
   align-items: center;
+  display: flex;
   margin-left: 24px;
 
   @include tablet
   {
-    width: 100%;
     margin-left: 0;
     padding-top: 10px;
+    width: 100%;
   }
 }
 

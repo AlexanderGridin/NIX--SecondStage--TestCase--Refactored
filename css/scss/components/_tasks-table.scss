@@ -2,9 +2,9 @@
 {
   align-items: center;
   display: flex;
+  font-size: 1rem;
   padding-left: 30px;
   padding-top: 20px;
-  font-size: 1rem;
 
   @include phone
   {
@@ -27,8 +27,8 @@
 // tasks-table--pseudo
 .tasks-table--pseudo
 {
-  width: 100%;
   font-size: 0.85rem;
+  width: 100%;
 
   @include tablet
   {
@@ -56,8 +56,8 @@
   @include tablet
   {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
 }
 
@@ -93,37 +93,35 @@
 
 .tasks-table--pseudo .tasks-table__row
 {
+  border-radius: 7px;
   display: flex;
-  // border: 1px solid red;
   justify-content: space-between;
   padding: 0 30px;
-  border-radius: 7px;
 
   @include tablet
   {
     display: block;
-    width: 49%;
     margin-bottom: 15px;
     padding: 30px;
+    width: 49%;
   }
 
   @include phone
   {
-    width: 100%;
     padding: 30px 15px;
+    width: 100%;
   }
 }
 
 .tasks-table--pseudo .tasks-table__header-cell,
 .tasks-table--pseudo .tasks-table__cell
 {
-  // border: 1px solid orange;
-  width: 100%;
-  max-width: 12.5%;
-  display: flex;
   align-items: center;
-  padding: 12px 0;
+  display: flex;
   margin: 0 5px;
+  max-width: 12.5%;
+  padding: 12px 0;
+  width: 100%;
 
   @include tablet
   {
@@ -237,7 +235,6 @@
 {
   @include tablet
   {
-    // border: 1px solid green;
     width: 100%;
     max-width: 100%;
   }
@@ -245,12 +242,12 @@
 
 .tasks-table--pseudo .tasks-table__cell-label
 {
+  color: $text-secondary-color;
   display: none;
+  font-weight: 700;
+  margin-right: 25px;
   max-width: 150px;
   width: 100%;
-  margin-right: 25px;
-  font-weight: 700;
-  color: $text-secondary-color;
 
   @include tablet
   {

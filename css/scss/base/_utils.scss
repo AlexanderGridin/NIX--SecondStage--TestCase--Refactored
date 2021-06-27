@@ -1,10 +1,10 @@
 .visually-hidden 
 {
-  position: absolute;
   clip: rect(0, 0, 0, 0);
-  width: 1px;
   height: 1px;
   margin: -1px;
+  position: absolute;
+  width: 1px;
 }
 
 .margin-bottom-0
@@ -15,43 +15,4 @@
 .overflow-hidden
 {
   overflow: hidden !important;
-}
-
-// TODO: Удалить после завершения разработки, если не будет использован
-.scrollable-table
-{
-  overflow-x: scroll;
-
-  @media screen and (min-width: $bp-laptop)
-  {
-    overflow-x: visible;
-  }
-
-  &::before
-  {
-    content: "Данная таблица поддерживает горизонтальную прокрутку";
-    display: block;
-    max-width: 100%;
-    margin: 15px 0;
-    padding: 10px;
-    text-align: center;
-    border: 1px solid #5F8173;
-    font-family: inherit;
-    font-size: 0.875rem;
-
-    @media screen and (min-width: $bp-laptop)
-    {
-      display: none;
-    }
-  }
-
-  table
-  {
-    width: 956px;
-
-    @media screen and (min-width: $bp-laptop)
-    {
-      width: 100%;
-    }
-  }
 }

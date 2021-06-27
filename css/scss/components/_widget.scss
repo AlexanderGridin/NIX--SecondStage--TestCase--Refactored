@@ -3,10 +3,10 @@
   background-color: $layout-secondary-color;
   border-radius: 7px;
   border: 1px solid $layout-secondary-color-lighter;
+  height: 100%;
+  max-height: 648px;
   padding: 40px 64px;
   position: relative;
-  max-height: 648px;
-  height: 100%;
 
   @include laptop
   {
@@ -15,8 +15,8 @@
 
   @include tablet
   {
-    max-height: none;
     height: auto;
+    max-height: none;
   }
 
   // Widget left vetical gradient line

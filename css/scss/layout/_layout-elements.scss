@@ -1,10 +1,10 @@
 .container
 {
-  max-width: 1340px;
-  width: 100%;
   margin: auto;
-  position: relative;
+  max-width: 1340px;
   padding: 0 10px;
+  position: relative;
+  width: 100%;
 }
 
 .section
@@ -14,8 +14,8 @@
 
 .section__title
 {
-  text-align: center;
+  color: $text-secondary-color;
   margin: 0;
   margin-bottom: 25px;
-  color: $text-secondary-color;
+  text-align: center;
 }

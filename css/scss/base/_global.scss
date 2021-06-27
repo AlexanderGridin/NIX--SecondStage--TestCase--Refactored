@@ -5,10 +5,10 @@ body{
 
 :root
 {
-  font-size: 0.875em;
   box-sizing: border-box;
-  line-height: 1.5;
   font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 0.875em;
+  line-height: 1.5;
 }
 
 body
@@ -46,10 +46,10 @@ a:active
 // Image
 img
 {
-  max-width: 100%;
+  display: block;
   height: auto;
   margin: 0;
-  display: block;
+  max-width: 100%;
 }
 
 // Form and form elements
@@ -61,7 +61,6 @@ label
   }
 }
 
-// TODO: Переделать!!!
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -69,17 +68,18 @@ input[type="number"],
 input[type="tel"],
 textarea
 {
-  max-width: 100%;
-  width: 100%;
-  border-radius: 0;
-  border: 2px solid #ddd;
-  padding: 15px 10px;
-  color: #000;
-  transition: 0.4s;
-  font-size: 1rem;
-  font-family: inherit;
+  background-color: $layout-secondary-color;
+  border-radius: 7px;
+  border: 1px solid $layout-secondary-color-lighter;
+  color: $text-secondary-color;
   display: block;
+  font-family: inherit;
+  font-size: 1rem;
   line-height: 1;
+  max-width: 100%;
+  padding: 15px 10px;
+  transition: 0.4s;
+  width: 100%;
 }
 
 input[type="text"]::placeholder,
@@ -89,7 +89,7 @@ input[type="number"]::placeholder,
 input[type="tel"]::placeholder,
 textarea::placeholder
 {
-  color: #ddd;
+  color: $text-primary-color;
 }
 
 input[type="text"]:hover,
@@ -106,28 +106,26 @@ input[type="number"]:focus,
 input[type="tel"]:focus,
 textarea:focus
 {
-  border: 2px solid #FFC0A1;
-  border-radius: 0;
+  border: 1px solid $layout-accent-color;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   outline: none;
 }
 
 select
 {
-  padding: 10px 30px 10px 16px;
-  background-color: $layout-secondary-color;
-  border: 1px solid $layout-secondary-color-lighter;
-  border-radius: 7px;
-  color: $text-primary-color;
-  overflow: hidden;
-  position: relative;
   appearance: none;
-  transition: 0.4s;
-
+  background-color: $layout-secondary-color;
   background-image: url(../imgs/shevron-down.svg);
-  background-size: 16px 16px;
   background-position: right 12px center;
   background-repeat: no-repeat;
+  background-size: 16px 16px;
+  border-radius: 7px;
+  border: 1px solid $layout-secondary-color-lighter;
+  color: $text-primary-color;
+  overflow: hidden;
+  padding: 10px 30px 10px 16px;
+  position: relative;
+  transition: 0.4s;
 
   &:hover
   {
@@ -140,8 +138,8 @@ select
 // Table
 table
 {
-  width: 100%;
   border-collapse: collapse;
+  width: 100%;
 }
 
 table,

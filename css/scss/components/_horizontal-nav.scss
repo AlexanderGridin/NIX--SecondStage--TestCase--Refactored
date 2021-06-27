@@ -1,9 +1,9 @@
 // horizontal-nav__mobile-button
 .horizontal-nav__mobile-button
 {
-  display: none;
-  border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  display: none;
   font-size: 0;
 
   @include laptop
@@ -15,25 +15,25 @@
 
   &::before
   {
-    content: "";
-    display: block;
-    width: 24px;
-    height: 24px;
     background-image: url(../imgs/menu.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    content: "";
+    display: block;
+    height: 24px;
+    width: 24px;
   }
 }
 
 // horizontal-nav__list
 .horizontal-nav__list
 {
+  align-items: center;
+  display: flex;
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;
-  display: flex;
-  align-items: center;
 
   @include laptop
   {
@@ -43,16 +43,16 @@
 
 .horizontal-nav__list.visible
 {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  top: 67px;
   background-color: $layout-primary-color;
   border-bottom: 2px solid $layout-accent-color;
   box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-  flex-direction: column;
-  z-index: 9;
   display: block;
+  flex-direction: column;
+  left: 0;
+  position: absolute;
+  top: 67px;
+  width: 100%;
+  z-index: 9;
 }
 
 // horizontal-nav__item
@@ -68,13 +68,12 @@
 .horizontal-nav__link:link,
 .horizontal-nav__link:visited
 {
-  display: inline-block;
-  padding: 25px 24px;
-  display: flex;
   align-items: center;
   color: $text-primary-color;
-  position: relative;
+  display: flex;
   font-weight: 600;
+  padding: 25px 24px;
+  position: relative;
   transition: 0.4s;
 
   @include desktop
@@ -85,19 +84,19 @@
 
 .horizontal-nav__link::after
 {
+  background-color: $layout-accent-color;
+  background-image: $primary-top-to-bottom-gradient;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  bottom: -1px;
   content: "";
   display: block;
   height: 3px;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-  position: absolute;
   left: 0;
-  bottom: -1px;
-  width: 100%;
-  background-color: $layout-accent-color;
-  background-image: $primary-top-to-bottom-gradient;
-  transition: opacity 0.4s;
   opacity: 0;
+  position: absolute;
+  transition: opacity 0.4s;
+  width: 100%;
 }
 
 .horizontal-nav__link:hover::after,
@@ -110,10 +109,10 @@
 .horizontal-nav__link.current
 {
   background-color: $layout-secondary-color-lighter;
-  text-decoration: none;
-  color: $layout-accent-color;
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
+  color: $layout-accent-color;
+  text-decoration: none;
 }
 
 // horizontal-nav__link-icon

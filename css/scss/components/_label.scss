@@ -5,6 +5,7 @@
   border-radius: 3px;
   color: $text-secondary-color;
   display: inline-block;
+  margin: 5px;
   margin-left: 12px;
   padding: 3px 12px;
   position: relative;
@@ -28,8 +29,7 @@
     width: 100%;
     z-index: -1;
   }
-
-  // Label hover
+  
   &:hover
   {
     text-decoration: none;

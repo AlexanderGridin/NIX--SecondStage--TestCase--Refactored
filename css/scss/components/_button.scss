@@ -1,25 +1,24 @@
 .button
 {
-  padding: 10px 30px;
-  // padding: 30px;
-  font-weight: bold;
   background: none;
-  border: none;
-  transition: 0.4s;
   border-radius: 7px;
+  border: none;
+  font-weight: bold;
+  padding: 10px 30px;
+  transition: 0.4s;
 
   &:hover
   {
-    cursor: pointer;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    cursor: pointer;
   }
 }
 
 .button--primary
 {
   background-color: $button-primary-color;
-  color: $button-primay-text-color;
   border: 1px solid $button-primary-color;
+  color: $button-primay-text-color;
 
   &:hover
   {
