@@ -1,0 +1,41 @@
+.widgets__flex-container
+{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @include tablet
+  {
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+  }
+}
+
+.widgets__flex-container-item
+{
+  flex-basis: 50%;
+  margin-bottom: 24px;
+
+  @include tablet
+  {
+    flex-basis: 100%;
+  }
+}
+
+.widgets__flex-container-item:nth-child(even)
+{
+  padding-left: 12px;
+
+  @include tablet
+  {
+    padding-left: 0;
+  }
+}
+
+.widgets__flex-container-item:last-child
+{
+  padding-left: 0;
+  width: 100%;
+  flex-basis: 100%;
+}
