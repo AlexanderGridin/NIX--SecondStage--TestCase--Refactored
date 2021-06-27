@@ -12,7 +12,6 @@
 {
   display: flex;
   align-items: center;
-  transform: translateY(-50%);
 }
 
 .form__item-checkbox .form__label
@@ -50,34 +49,3 @@
 {
   margin-right: 12px;
 }
-
-// Form Modifiers
-.form--horizontal
-{
-  display: flex;
-  align-items: flex-end;
-  flex-wrap: wrap;
-}
-
-.form--horizontal > div + div
-{
-  margin-left: 24px;
-}
-
-.form--horizontal .form__actions
-{
-  display: flex;
-  align-items: center;
-}
-
-.form--horizontal .form__actions .button
-{
-  display: block;
-}
-
-.form--horizontal .form__actions .button + .button
-{
-  margin-left: 25px;
-}
-
-

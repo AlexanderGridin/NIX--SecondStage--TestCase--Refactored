@@ -1,4 +1,45 @@
-.widgets__flex-layout .flex-layout__item + .flex-layout__item
+.widgets__flex-container
 {
-  margin-left: 24px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @include tablet
+  {
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+  }
+}
+
+.widgets__flex-container-item + .widgets__flex-container-item
+{
+  padding-left: 12px;
+
+  @include tablet
+  {
+    padding-left: 0;
+  }
+}
+
+.widgets__flex-container-item
+{
+  margin-bottom: 24px;
+}
+
+.widgets__flex-container-item:nth-child(1),
+.widgets__flex-container-item:nth-child(2)
+{
+  flex-basis: 50%;
+
+  @include tablet
+  {
+    flex-basis: 100%;
+  }
+}
+
+.widgets__flex-container-item:nth-child(3)
+{
+  padding-left: 0;
+  width: 100%;
 }

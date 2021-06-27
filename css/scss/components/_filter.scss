@@ -3,9 +3,72 @@
   padding-top: 40px;
 }
 
-.filter .form__item-select,
-.filter .form__select
+.filter__form
+{
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+
+  @include tablet
+  {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.filter__form > .form__item + .form__item
+{
+  margin-left: 24px;
+
+  @include tablet
+  {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+.filter__form .form__item-select,
+.filter__form .form__select
 {
   max-width: 200px;
   width: 100%;
+
+  @include tablet
+  {
+    max-width: none;
+  }
+}
+
+.filter__form .form__item-checkbox
+{
+  transform: translateY(-50%);
+
+  @include tablet
+  {
+    transform: none;
+  }
+}
+
+.filter__form .form__actions
+{
+  display: flex;
+  align-items: center;
+  margin-left: 24px;
+
+  @include tablet
+  {
+    width: 100%;
+    margin-left: 0;
+    padding-top: 10px;
+  }
+}
+
+.filter__form .form__actions .button
+{
+  display: block;
+}
+
+.filter__form .form__actions .button + .button
+{
+  margin-left: 25px;
 }

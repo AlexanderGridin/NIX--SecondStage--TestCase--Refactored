@@ -1,6 +1,15 @@
 .horizontal-nav__mobile-button
 {
   display: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+
+  @include laptop
+  {
+    display: block;
+    margin-right: -10px;
+    padding: 20px 15px;
+  }
 }
 
 .horizontal-nav__list
@@ -10,6 +19,11 @@
   list-style: none;
   display: flex;
   align-items: center;
+
+  @include laptop
+  {
+    display: none;
+  }
 }
 
 .horizontal-nav__link:link,
@@ -23,6 +37,11 @@
   position: relative;
   font-weight: 600;
   transition: 0.4s;
+
+  @include desktop
+  {
+    padding: 10px;
+  }
 }
 
 .horizontal-nav__link::before

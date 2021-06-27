@@ -3,11 +3,23 @@
   background-color: $layout-secondary-color;
   border-radius: 7px;
   border: 1px solid $layout-secondary-color-lighter;
-  margin-bottom: 24px;
   padding: 40px 64px;
   position: relative;
+  max-height: 648px;
+  height: 100%;
 
-  // Widget left line
+  @include laptop
+  {
+    padding: 40px 10px 40px 20px;
+  }
+
+  @include tablet
+  {
+    max-height: none;
+    height: auto;
+  }
+
+  // Widget left vetical gradient line
   &::before
   {
     background-color: $layout-accent-color;
@@ -25,7 +37,7 @@
   }
 }
 
-// Title
+// widget__title
 .widget__title
 {
   color: $text-secondary-color;
@@ -35,19 +47,31 @@
   text-align: center;
 }
 
-// Content
+// widget__content
 .widget__content--fixed-height
 {
   height: 515px;
   overflow: auto;
+
+  @include laptop
+  {
+    height: auto;
+  }
 }
 
-.widget__content-col > .widget__group + .widget__group
+// widget__flex-content
+.widget__flex-content
+{
+  display: flex;
+  justify-content: space-between;
+}
+
+.widget__flex-content-item > .widget__group + .widget__group
 {
   margin-top: 40px;
 }
 
-// Group
+// widget__group
 .widget__group-title
 {
   color: $layout-accent-color-lighter;
@@ -57,7 +81,7 @@
   margin-bottom: 8px;
 }
 
-// Field
+// widget__field
 .widget__field + .widget__field
 {
   margin-top: 16px;
@@ -81,6 +105,11 @@
   margin-right: 45px;
   max-width: 90px;
   width: 100%;
+
+  @include phone
+  {
+    margin-right: 15px;
+  }
 }
 
 .widget__field-label--colored
@@ -88,7 +117,7 @@
   color: $layout-accent-color-lighter;
 }
 
-// List
+// widget__list
 .widget__list
 {
   font-weight: 600;
@@ -98,7 +127,7 @@
   width: 100%;
 }
 
-// List Nested
+// widget__list--nested
 .widget__list--nested
 {
   font-weight: 400;
@@ -106,7 +135,7 @@
   padding-top: 8px;
 }
 
-// List Table view
+// widget__list--table-view
 .widget__list--table-view .widget__field
 {
   align-items: center;
@@ -153,7 +182,7 @@
   padding-bottom: 9px;
 }
 
-// Table
+// widget__table
 .widget__table
 {
   border: none;
@@ -175,22 +204,84 @@
   border: none;
 }
 
-// Widget Medium
+// widget--md
 .widget--md
 {
   max-width: 648px;
   width: 100%;
+
+  @include laptop
+  {
+    max-width: 100%;
+  }
 }
 
-.widget--md .widget__content-col
+.widget--md .widget__flex-content
+{
+  @include phone
+  {
+    flex-wrap: wrap;
+  }
+}
+
+.widget--md .widget__flex-content-item + .widget__flex-content-item
+{
+  margin-left: 20px;
+
+  @include laptop
+  {
+    margin-left: 0;
+  }
+}
+
+.widget--md .widget__flex-content-item
 {
   max-width: 241px;
   width: 100%;
+
+  @include laptop
+  {
+    max-width: 47%;
+  }
+
+  @include phone
+  {
+    max-width: 100%;
+  }
 }
 
-// Widget Large
-.widget--lg .widget__content-col
+.widget--md .widget__flex-content-item .widget__group + .widget__group
+{
+  margin-top: 40px;
+}
+
+// widget--lg
+.widget--lg .widget__flex-content-item + .widget__flex-content-item
+{
+  margin-left: 15px;
+
+  @include phone
+  {
+    margin-left: 0;
+    margin-top: 15px;
+  }
+}
+
+.widget--lg .widget__flex-content
+{
+  @include phone
+  {
+    flex-wrap: wrap;
+  }
+}
+
+.widget--lg .widget__flex-content-item
 {
   max-width: 576px;
   width: 100%;
+
+  @include phone
+  {
+    max-width: 100%;
+  }
 }
