@@ -809,15 +809,6 @@ th {
   }
 }
 
-.horizontal-nav__link::before {
-  content: "";
-  display: block;
-  width: 24px;
-  height: 24px;
-  background-color: #8F7FFF;
-  margin-right: 4px;
-}
-
 .horizontal-nav__link::after {
   content: "";
   display: block;
@@ -848,6 +839,20 @@ th {
   color: #8F7FFF;
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
+}
+
+.horizontal-nav__link-icon {
+  margin-right: 4px;
+}
+
+.horizontal-nav__link-icon path {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.horizontal-nav__link:hover .horizontal-nav__link-icon path,
+.horizontal-nav__link.current .horizontal-nav__link-icon path {
+  fill: #8F7FFF !important;
 }
 
 .user-profile__photo {

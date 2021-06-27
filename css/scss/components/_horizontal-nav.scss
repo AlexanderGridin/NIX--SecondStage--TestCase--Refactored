@@ -1,3 +1,4 @@
+// horizontal-nav__mobile-button
 .horizontal-nav__mobile-button
 {
   display: none;
@@ -12,6 +13,7 @@
   }
 }
 
+// horizontal-nav__list
 .horizontal-nav__list
 {
   margin: 0;
@@ -26,6 +28,7 @@
   }
 }
 
+// horizontal-nav__link
 .horizontal-nav__link:link,
 .horizontal-nav__link:visited
 {
@@ -42,16 +45,6 @@
   {
     padding: 10px;
   }
-}
-
-.horizontal-nav__link::before
-{
-  content: "";
-  display: block;
-  width: 24px;
-  height: 24px;
-  background-color: $layout-accent-color;
-  margin-right: 4px;
 }
 
 .horizontal-nav__link::after
@@ -85,4 +78,21 @@
   color: $layout-accent-color;
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
+}
+
+// horizontal-nav__link-icon
+.horizontal-nav__link-icon
+{
+  margin-right: 4px;
+}
+
+.horizontal-nav__link-icon path
+{
+  transition: 0.4s;
+}
+
+.horizontal-nav__link:hover .horizontal-nav__link-icon path,
+.horizontal-nav__link.current .horizontal-nav__link-icon path
+{
+  fill: $layout-accent-color !important;
 }
