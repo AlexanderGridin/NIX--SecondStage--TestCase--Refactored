@@ -1487,6 +1487,8 @@ th {
   padding: 8px 12px;
   border-radius: 4px;
   color: #B6B4C6;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .pagination__button:hover, .pagination__button.current {
