@@ -7,7 +7,7 @@ body{
 {
   font-size: 0.875em;
   box-sizing: border-box;
-  line-height: 1.3;
+  line-height: 1.5;
   font-family: 'Open Sans', Arial, sans-serif;
 }
 
@@ -22,9 +22,9 @@ body
 ::after
 {
   box-sizing: inherit;
-  // margin: 0;
 }
 
+// Link
 a:link
 {
   color: $link-primary-color;
@@ -43,12 +43,22 @@ a:active
   text-decoration: underline;
 }
 
+// Image
 img
 {
   max-width: 100%;
   height: auto;
   margin: 0;
   display: block;
+}
+
+// Form and form elements
+label
+{
+  &:hover
+  {
+    cursor: pointer;
+  }
 }
 
 input[type="text"],
@@ -111,11 +121,9 @@ select
   overflow: hidden;
   position: relative;
   appearance: none;
-  max-width: 200px;
-  width: 100%;
   transition: 0.4s;
 
-  background-image: url(../imgs/chevron-down.png);
+  background-image: url(../imgs/shevron-down.svg);
   background-size: 16px 16px;
   background-position: right 12px center;
   background-repeat: no-repeat;
@@ -127,6 +135,7 @@ select
   }
 }
 
+// Table
 table
 {
   width: 100%;

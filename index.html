@@ -83,7 +83,7 @@
     </div>
   </header>
 
-  <div class="filter">
+  <div class="filter section">
     <div class="container">
       <form action="#" class="form form--horizontal">
         <div class="form__item form__item-select">
@@ -115,12 +115,12 @@
   </div>
 
   <main class="main">
-    <div class="widgets">
+    <div class="widgets section">
       <div class="container">
-        <div class="flex-layout flex-layout--two-columns">
-          <div class="widget">
+        <div class="flex-layout">
+          <div class="widget widget--medium">
             <h2 class="widget__title">Project information</h2>
-            <div class="widget__content">
+            <div class="widget__content widget__content--fixed-height">
               <div class="widget__field">
                 <div class="widget__field-label widget__field-label--colored">Project name</div>
                 <div class="widget__field-value">Science & Information Platform</div>
@@ -143,18 +143,27 @@
               </div>
               <div class="widget__field">
                 <div class="widget__field-label widget__field-label--colored">Time</div>
-                <div class="widget__field-value">$</div>
+                <div class="widget__field-value">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 0.833313V19.1666" stroke="#27AE60" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M14.1667 4.16669H7.91667C7.14312 4.16669 6.40125 4.47398 5.85427 5.02096C5.30729 5.56794 5 6.30981 5 7.08335C5 7.8569 5.30729 8.59877 5.85427 9.14575C6.40125 9.69273 7.14312 10 7.91667 10H12.0833C12.8569 10 13.5987 10.3073 14.1457 10.8543C14.6927 11.4013 15 12.1431 15 12.9167C15 13.6902 14.6927 14.4321 14.1457 14.9791C13.5987 15.5261 12.8569 15.8334 12.0833 15.8334H5"
+                      stroke="#27AE60" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
               </div>
               <div class="widget__field">
                 <div class="widget__field-label widget__field-label--colored">Label</div>
                 <div class="widget__field-value">
-                  <div class="label">Hourly</div>
+                  <a class="label" href="#">Hourly</a>
                 </div>
               </div>
               <div class="widget__field">
                 <div class="widget__field-label widget__field-label--colored">Tag</div>
                 <div class="widget__field-value">
-                  <div class="tag">Page Mockup</div>
+                  <div class="tag">
+                    <a class="tag__link" href="#">Page Mockup</a>
+                  </div>
                 </div>
               </div>
               <div class="widget__field">
@@ -168,170 +177,198 @@
                 <div class="widget__field-value">Jane Cooper, Wade Warren, Esther Howard, Cameron Williamson, Brooklyn Simmons, Leslie Alexander, Jenny Wilson, Gur
                 Hawkins, Robert Fox, Jacob Jones, Kristin Watson, Cody Fisher, Savannah Nguen, Bessie Cooper, Albert Flores, Ralph
                 Edwards, Dianne Russel, Devon Lane, Marvin McKinney, Jerome Bell, Courtney Henry, Theresa Webb, Kathrin Murphu, Eleonora
-                Pena, Floud Miles, Darrell Steward</div>
+                Pena</div>
               </div>
             </div>
           </div>
-          <div class="widget">
+          <div class="widget widget--medium">
             <h2 class="widget__title">Project Time</h2>
-            <div class="widget__content">
-              <div class="widget__group">
-                <h3 class="widget__group-title">Total time (Hours)</h3>
-                <ul class="widget__list widget__list--table-view widget__list--primary">
-                  <li class="widget__list-item">
-                    <div class="widget__field">
-                      <div class="widget__field-label widget__field-label--colored">Changes</div>
-                      <div class="widget__field-value">2067.26h</div>
-                    </div>
-                  </li>
-                  <li class="widget__list-item">
-                    <div class="widget__field">
-                      <div class="widget__field-label widget__field-label--colored">Origin</div>
-                      <div class="widget__field-value">1660.55h</div>
-                    </div>
-                    <ul class="widget__list widget__list--table-view widget__list--nested">
+            <div class="widget__content widget__content--fixed-height">
+              <div class="flex-layout">
+                <div class="widget__content-col">
+                  <div class="widget__group">
+                    <h3 class="widget__group-title">Total time (Hours)</h3>
+                    <ul class="widget__list widget__list--table-view widget__list--primary">
                       <li class="widget__list-item">
                         <div class="widget__field">
-                          <div class="widget__field-label widget__field-label--colored">Programming</div>
-                          <div class="widget__field-value">2345.56h</div>
+                          <div class="widget__field-label">Changes</div>
+                          <div class="widget__field-value">2067.26h</div>
                         </div>
                       </li>
                       <li class="widget__list-item">
                         <div class="widget__field">
-                          <div class="widget__field-label widget__field-label--colored">Markup</div>
-                          <div class="widget__field-value">27.18h</div>
-                        </div>
-                      </li>
-                      <li class="widget__list-item">
-                        <div class="widget__field">
-                          <div class="widget__field-label widget__field-label--colored">Graphic Design</div>
-                          <div class="widget__field-value">34h</div>
-                        </div>
-                      </li>
-                      <li class="widget__list-item">
-                        <div class="widget__field">
-                          <div class="widget__field-label widget__field-label--colored">Estimation</div>
-                          <div class="widget__field-value">678h</div>
-                        </div>
-                      </li>
-                      <li class="widget__list-item">
-                        <div class="widget__field">
-                          <div class="widget__field-label widget__field-label--colored">Investigation</div>
-                          <div class="widget__field-value">80.83h</div>
-                        </div>
-                      </li>
-                      <li class="widget__list-item">
-                        <div class="widget__field">
-                          <div class="widget__field-label widget__field-label--colored">Bug Fixing</div>
-                          <div class="widget__field-value">76h</div>
-                        </div>
-                      </li>
-                      <li class="widget__list-item">
-                        <div class="widget__field">
-                          <div class="widget__field-label widget__field-label--colored">Quality Assurance</div>
-                          <div class="widget__field-value">6h</div>
-                        </div>
-                      </li>
-                      <li class="widget__list-item">
-                        <div class="widget__field">
-                          <div class="widget__field-label widget__field-label--colored">Meetings</div>
-                          <div class="widget__field-value">5h</div>
-                        </div>
-                      </li>
-                      <li class="widget__list-item">
-                        <div class="widget__field">
-                          <div class="widget__field-label widget__field-label--colored">Other</div>
-                          <div class="widget__field-value">8256.08h</div>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="widget__list-item">
-                    <div class="widget__field">
-                      <div class="widget__field-label widget__field-label--colored">Sum</div>
-                      <div class="widget__field-value">15236.48h</div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div class="widget__group">
-                <h3 class="widget__group-title">Time (Hours) by Current Month (Sep)</h3>
-                <ul class="widget__list widget__list--table-view widget__list--primary">
-                  <li class="widget__list-item">
-                    <div class="widget__field">
-                      <div class="widget__field-label widget__field-label--colored">Changes</div>
-                      <div class="widget__field-value">0h</div>
-                    </div>
-                  </li>
-                  <li class="widget__list-item">
-                    <div class="widget__field">
-                      <div class="widget__field-label widget__field-label--colored">Origin</div>
-                      <div class="widget__field-value">2067.26h</div>
-                    </div>
-                    <ul class="widget__list widget__list--table-view widget__list--nested">
-                      <li class="widget__list-item">
-                        <div class="widget__field">
-                          <div class="widget__field-label widget__field-label--colored">Programming</div>
+                          <div class="widget__field-label">Origin</div>
                           <div class="widget__field-value">1660.55h</div>
                         </div>
+                        <ul class="widget__list widget__list--table-view widget__list--nested">
+                          <li class="widget__list-item">
+                            <div class="widget__field">
+                              <div class="widget__field-label">Programming</div>
+                              <div class="widget__field-value">2345.56h</div>
+                            </div>
+                          </li>
+                          <li class="widget__list-item">
+                            <div class="widget__field">
+                              <div class="widget__field-label">Markup</div>
+                              <div class="widget__field-value">27.18h</div>
+                            </div>
+                          </li>
+                          <li class="widget__list-item">
+                            <div class="widget__field">
+                              <div class="widget__field-label">Graphic Design</div>
+                              <div class="widget__field-value">34h</div>
+                            </div>
+                          </li>
+                          <li class="widget__list-item">
+                            <div class="widget__field">
+                              <div class="widget__field-label">Estimation</div>
+                              <div class="widget__field-value">678h</div>
+                            </div>
+                          </li>
+                          <li class="widget__list-item">
+                            <div class="widget__field">
+                              <div class="widget__field-label">Investigation</div>
+                              <div class="widget__field-value">80.83h</div>
+                            </div>
+                          </li>
+                          <li class="widget__list-item">
+                            <div class="widget__field">
+                              <div class="widget__field-label">Bug Fixing</div>
+                              <div class="widget__field-value">76h</div>
+                            </div>
+                          </li>
+                          <li class="widget__list-item">
+                            <div class="widget__field">
+                              <div class="widget__field-label">Quality Assurance</div>
+                              <div class="widget__field-value">6h</div>
+                            </div>
+                          </li>
+                          <li class="widget__list-item">
+                            <div class="widget__field">
+                              <div class="widget__field-label">Meetings</div>
+                              <div class="widget__field-value">5h</div>
+                            </div>
+                          </li>
+                          <li class="widget__list-item">
+                            <div class="widget__field">
+                              <div class="widget__field-label">Other</div>
+                              <div class="widget__field-value">8256.08h</div>
+                            </div>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="widget__list-item">
+                        <div class="widget__field">
+                          <div class="widget__field-label">Sum</div>
+                          <div class="widget__field-value">15236.48h</div>
+                        </div>
                       </li>
                     </ul>
-                  </li>
-                  <li class="widget__list-item">
-                    <div class="widget__field">
-                      <div class="widget__field-label widget__field-label--colored">Sum</div>
-                      <div class="widget__field-value">15236.48h</div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div class="widget__group">
-                <h3 class="widget__group-title">Estimations (Hours)</h3>
-                <ul class="widget__list widget__list--table-view widget__list--primary">
-                  <li class="widget__list-item">
-                    <div class="widget__field">
-                      <div class="widget__field-label widget__field-label--colored">Changes</div>
-                      <div class="widget__field-value">0h</div>
-                    </div>
-                  </li>
-                  <li class="widget__list-item">
-                    <div class="widget__field">
-                      <div class="widget__field-label widget__field-label--colored">Origin</div>
-                      <div class="widget__field-value">2067.26h</div>
-                    </div>
-                  </li>
-                  <li class="widget__list-item">
-                    <div class="widget__field">
-                      <div class="widget__field-label widget__field-label--colored">Sum</div>
-                      <div class="widget__field-value">15236.48h</div>
-                    </div>
-                  </li>
-                </ul>
+                  </div>
+                </div>
+                <div class="widget__content-col">
+                  <div class="widget__group">
+                    <h3 class="widget__group-title">Time (Hours) by Current Month (Sep)</h3>
+                    <ul class="widget__list widget__list--table-view widget__list--primary">
+                      <li class="widget__list-item">
+                        <div class="widget__field">
+                          <div class="widget__field-label">Changes</div>
+                          <div class="widget__field-value">0h</div>
+                        </div>
+                      </li>
+                      <li class="widget__list-item">
+                        <div class="widget__field">
+                          <div class="widget__field-label">Origin</div>
+                          <div class="widget__field-value">2067.26h</div>
+                        </div>
+                        <ul class="widget__list widget__list--table-view widget__list--nested">
+                          <li class="widget__list-item">
+                            <div class="widget__field">
+                              <div class="widget__field-label">Programming</div>
+                              <div class="widget__field-value">1660.55h</div>
+                            </div>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="widget__list-item">
+                        <div class="widget__field">
+                          <div class="widget__field-label">Sum</div>
+                          <div class="widget__field-value">15236.48h</div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="widget__group">
+                    <h3 class="widget__group-title">Estimations (Hours)</h3>
+                    <ul class="widget__list widget__list--table-view widget__list--primary">
+                      <li class="widget__list-item">
+                        <div class="widget__field">
+                          <div class="widget__field-label">Changes</div>
+                          <div class="widget__field-value">0h</div>
+                        </div>
+                      </li>
+                      <li class="widget__list-item">
+                        <div class="widget__field">
+                          <div class="widget__field-label">Origin</div>
+                          <div class="widget__field-value">2067.26h</div>
+                        </div>
+                      </li>
+                      <li class="widget__list-item">
+                        <div class="widget__field">
+                          <div class="widget__field-label">Sum</div>
+                          <div class="widget__field-value">15236.48h</div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="widget">
+        <div class="widget widget--large">
           <h2 class="widget__title">Efficiency</h2>
           <div class="widget__content">
-            <div class="flex-layout flex-layout--two-columns">
-              <div class="widget__group">
-                <h3 class="widget__group-title">Total Efficiency</h3>
-                <table class="widget__table">
-                  <tr class="widget__table-row">
-                    <td colspan="3">Changes</td>
-                  </tr>
-                  <tr class="widget__table-row">
-                    <td>Origin</td>
-                    <td>2345.04 h</td>
-                    <td>100%</td>
-                  </tr>
-                  <tr class="widget__table-row">
-                    <td>Average</td>
-                    <td>2345.04 h</td>
-                    <td>100%</td>
-                  </tr>
-                </table>
+            <div class="flex-layout">
+              <div class="widget__content-col">
+                <div class="widget__group">
+                  <h3 class="widget__group-title">Total Efficiency</h3>
+                  <table class="widget__table">
+                    <tr class="widget__table-row">
+                      <td class="widget__table-cell" colspan="3">Changes</td>
+                    </tr>
+                    <tr class="widget__table-row">
+                      <td class="widget__table-cell">Origin</td>
+                      <td class="widget__table-cell">2345.04 h</td>
+                      <td class="widget__table-cell">100%</td>
+                    </tr>
+                    <tr class="widget__table-row">
+                      <td class="widget__table-cell">Average</td>
+                      <td class="widget__table-cell">2345.04 h</td>
+                      <td class="widget__table-cell">100%</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="widget__content-col">
+                <div class="widget__group">
+                  <h3 class="widget__group-title">Efficiency by Current Month (Sep)</h3>
+                  <table class="widget__table">
+                    <tr class="widget__table-row">
+                      <td class="widget__table-cell" colspan="3">Changes</td>
+                    </tr>
+                    <tr class="widget__table-row">
+                      <td class="widget__table-cell">Origin</td>
+                      <td class="widget__table-cell">507.26h</td>
+                      <td class="widget__table-cell">100%</td>
+                    </tr>
+                    <tr class="widget__table-row">
+                      <td class="widget__table-cell">Average</td>
+                      <td class="widget__table-cell">507.26h</td>
+                      <td class="widget__table-cell">100%</td>
+                    </tr>
+                  </table>
+                </div>
               </div>
             </div>
           </div>

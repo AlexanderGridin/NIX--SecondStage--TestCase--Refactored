@@ -4,6 +4,8 @@ $bp-laptop: 991px;
 $bp-desktop: 1199px;
 
 // COLORS
+$error-color: #FF6A59;
+
 // -- text
 $text-primary-color: #B6B4C6;
 $text-secondary-color: #FFF;
@@ -23,6 +25,10 @@ $layout-secondary-color: #242B35;
 $layout-secondary-color-lighter: #3D444E;
 $layout-accent-color: #8F7FFF;
 $layout-accent-color-lighter: #C7BFFF;
+$layout-accent-color-medium-darker: #564ebb;
+$layout-accent-color-darker: #614afe;
 
 // -- gradients
 $primary-top-to-bottom-gradient: linear-gradient(0deg, rgba(191,186,250,1) 0%, rgba(97,74,254,1) 100%);
+$primary-left-to-right-gradient: linear-gradient(270deg, rgba(122,116,203,1) 0%, rgba(86,78,187,1) 100%);
+$primary-bottom-to-top-gradient: linear-gradient(180deg, rgba(190,185,249,1) 0%, rgba(98,75,255,1) 100%);
