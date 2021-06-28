@@ -10,6 +10,8 @@
 
 > Mixed Content: The page at 'https://alexandergridin.github.io/NIX--SecondStage--TestCase/' was loaded over HTTPS, but requested an insecure resource 'http://f0541354.xsph.ru/tasks'. This request has been blocked; the content must be served over HTTPS.
 
+При разработке я пользовался VSCode и модулем LiveServer к нему. В этом случае таблица рендерится, т.к. LiveServer использует **http**.
+
 ## Пагинация
 Пагинация в таблице реализована таким образом, что она хорошо работает и в мобильной версии, поэтому я решил её оставить.
 
