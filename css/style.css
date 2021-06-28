@@ -530,6 +530,45 @@ th {
   overflow: hidden !important;
 }
 
+.loading {
+  height: 320px;
+  max-height: 320px;
+  overflow: hidden;
+  pointer-events: none;
+  position: relative;
+}
+
+.loading::before {
+  background-color: #242B35;
+  border-radius: 7px;
+  border: 1px solid #3D444E;
+  bottom: 0;
+  content: "";
+  display: block;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 9;
+}
+
+.loading::after {
+  background-image: url(../imgs/loader.gif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  bottom: 0;
+  content: "";
+  height: 150px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 150px;
+  z-index: 10;
+}
+
 .container {
   margin: auto;
   max-width: 1340px;
@@ -1165,6 +1204,11 @@ th {
 
 .table__rows-per-page-form .form__item-select .form__select {
   padding: 16px 30px 16px 16px;
+}
+
+.tasks-table {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .tasks-table__sorting-button {

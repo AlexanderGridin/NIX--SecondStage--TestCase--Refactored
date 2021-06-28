@@ -16,3 +16,45 @@
 {
   overflow: hidden !important;
 }
+
+.loading
+{
+  height: 320px;
+  max-height: 320px;
+  overflow: hidden;
+  pointer-events: none;
+  position: relative;
+
+  &::before
+  {
+    background-color: $layout-secondary-color;
+    border-radius: 7px;
+    border: 1px solid $layout-secondary-color-lighter;
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 9;
+  }
+
+  &::after
+  {
+    background-image: url(../imgs/loader.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: 0;
+    content: "";
+    height: 150px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 150px;
+    z-index: 10;
+  }
+}

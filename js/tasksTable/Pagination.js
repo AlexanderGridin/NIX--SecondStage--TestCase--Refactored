@@ -121,11 +121,14 @@ function handlePrevPageButton(button, pagination){
   // Update currentPageButton CSS class
   pagination.removeCurrentClassFromPageButtons();
   currentPageButton.classList.add(pagination.classNames.current);
+
+  table.setLoader();
   
   // Get data and update table body
   getDataFromUrl(url).then((data) => {
     table.clearBody();
     table.updateBody(data);
+    table.removeLoader();
   });
 }
 
@@ -148,11 +151,14 @@ function handleNextPageButton(button, pagination){
   // Update currentPageButton CSS class
   pagination.removeCurrentClassFromPageButtons();
   currentPageButton.classList.add(pagination.classNames.current);
+
+  table.setLoader();
   
   // Get data and update table body
   getDataFromUrl(url).then((data) => {
     table.clearBody();
     table.updateBody(data);
+    table.removeLoader();
   });
 }
 
@@ -189,10 +195,13 @@ function handlePageButton(button, pagination){
     pagination.nextPageButton.removeAttribute('disabled');
   }
 
+  table.setLoader();
+
   // Get data and update table body
   getDataFromUrl(url).then((data) => {
     table.clearBody();
     table.updateBody(data);
+    table.removeLoader();
   });
 }
 

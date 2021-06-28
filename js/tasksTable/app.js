@@ -12,7 +12,10 @@ function main(){
   table.enableSortByFields('efficiency', 'myTimeSpentByPeriod', 'totalTimeSpentByAll', 'estimation');
   pagination.setElementForPagging(table);
 
+  table.setLoader();
+
   getDataFromUrl(dataUrl).then((data) => {
     table.build(data);
+    table.removeLoader();
   });
 }
