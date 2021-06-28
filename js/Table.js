@@ -105,6 +105,55 @@ class Table{
     let sortedData = null;
     sortDirection = sortDirection.toLowerCase();
 
+    // TODO: это очень плохой кусок кода...его нужно отрефакторить
+    if(fieldName.toLowerCase() === 'efficiency'){
+      switch(sortDirection){
+        case 'asc':
+          sortedData = this.tableData.sort((a, b) => {
+            a = a[fieldName].match(/\d/g);
+            b = b[fieldName].match(/\d/g);
+
+            if(a === null){
+              a = 0;
+            } else {
+              a = +a.join('');
+            }
+
+            if(b === null){
+              b = 0;
+            } else {
+              b = +b.join('');
+            }
+
+            return a - b;
+          });
+          break;
+
+        case 'desc':
+          sortedData = this.tableData.sort((a, b) => {
+            a = a[fieldName].match(/\d/g);
+            b = b[fieldName].match(/\d/g);
+
+            if(a === null){
+              a = 0;
+            } else {
+              a = +a.join('');
+            }
+
+            if(b === null){
+              b = 0;
+            } else {
+              b = +b.join('');
+            }
+            
+            return b - a;
+          });
+          break;
+      }
+
+      return sortedData;
+    }
+
     switch(sortDirection){
       case 'asc':
         sortedData = this.tableData.sort((a, b) => {
