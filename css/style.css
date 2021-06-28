@@ -1108,6 +1108,12 @@ th {
   }
 }
 
+@media screen and (max-width: 767px) {
+  .widget--md .widget__flex-content-item + .widget__flex-content-item {
+    margin-top: 40px;
+  }
+}
+
 .widget--md .widget__flex-content-item .widget__group + .widget__group {
   margin-top: 40px;
 }
