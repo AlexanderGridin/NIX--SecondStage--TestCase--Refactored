@@ -1548,6 +1548,21 @@ th {
   width: 100%;
 }
 
+.tasks-table--pseudo .tasks-table__summary {
+  margin-top: 8px;
+  color: #FFF;
+}
+
+@media screen and (max-width: 991px) {
+  .tasks-table--pseudo .tasks-table__summary {
+    display: none;
+  }
+}
+
+.tasks-table--pseudo .tasks-table__summary .tasks-table__row {
+  background-color: #2D333D;
+}
+
 .pagination,
 .pagination__list {
   display: -webkit-inline-box;

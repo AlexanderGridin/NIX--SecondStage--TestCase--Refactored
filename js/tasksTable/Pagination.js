@@ -126,9 +126,9 @@ function handlePrevPageButton(button, pagination){
   
   // Get data and update table body
   getDataFromUrl(url).then((data) => {
-    table.clearBody();
-    table.updateBody(data);
-    table.removeLoader();
+    table.updateBody(data)
+      .updateTableSummary()
+      .removeLoader();
   });
 }
 
@@ -156,9 +156,9 @@ function handleNextPageButton(button, pagination){
   
   // Get data and update table body
   getDataFromUrl(url).then((data) => {
-    table.clearBody();
-    table.updateBody(data);
-    table.removeLoader();
+    table.updateBody(data)
+      .updateTableSummary()
+      .removeLoader();
   });
 }
 
@@ -199,9 +199,9 @@ function handlePageButton(button, pagination){
 
   // Get data and update table body
   getDataFromUrl(url).then((data) => {
-    table.clearBody();
-    table.updateBody(data);
-    table.removeLoader();
+    table.updateBody(data)
+      .updateTableSummary()
+      .removeLoader();
   });
 }
 

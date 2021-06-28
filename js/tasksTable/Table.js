@@ -3,18 +3,27 @@ import {removeClassFromElements} from '../utils.js';
 class Table{
   constructor(elementSelector){
     this.element = document.querySelector(elementSelector);
+
     this.fieldsForSorting = [];
+    this.fieldsForSummary = [];
+
     this.tableData = null;
   }
 
   build(data){
     this.tableData = data;
 
+    this.element.prepend(this.createTableSummary(data));
     this.element.prepend(this.createTableBody(data));
     this.element.prepend(this.createTableHeader(data));
 
     this.handleSortingButtons(this.fieldsForSorting);
 
+    return this;
+  }
+
+  setFieldsForSummary(...fieldsNames){
+    this.fieldsForSummary = fieldsNames;
     return this;
   }
 
@@ -102,6 +111,7 @@ class Table{
     }
   }
 
+  // TODO
   sortTableDataByField(fieldName, sortDirection){
     let sortedData = null;
     sortDirection = sortDirection.toLowerCase();
@@ -170,6 +180,145 @@ class Table{
     }
 
     return sortedData;
+  }
+
+  // Table summary functions
+  createTableSummary(data){
+    let tableSummary = document.createElement('div');
+    tableSummary.classList.add('tasks-table__summary');
+
+    tableSummary.append(this.createTableSummaryRow(data));
+
+    return tableSummary;
+  }
+
+  // TODO: этой функции не помешает рефакторинг...
+  createTableSummaryRow(data){
+    let parsedDataItem = null;
+    let tableSummaryRow = document.createElement('div');
+    tableSummaryRow.classList.add('tasks-table__row');
+    let parsedData = [];
+    let summaryData = [];
+    let fieldsForParsing = [
+      {
+        fieldName: 'taskName',
+        fieldLabel: 'Task name',
+      },
+      {
+        fieldName: 'developer',
+        fieldLabel: 'Developer',
+      },
+      {
+        fieldName: 'workType',
+        fieldLabel: 'Work Type',
+      },
+      {
+        fieldName: 'status',
+        fieldLabel: 'Status',
+      },
+      {
+        fieldName: 'estimation',
+        fieldLabel: 'Estimation (h)',
+      },
+      {
+        fieldName: 'totalTimeSpentByAll',
+        fieldLabel: 'Total time spent by All',
+      },
+      {
+        fieldName: 'myTimeSpentByPeriod',
+        fieldLabel: 'My Time spent by Period (h)',
+      },
+      {
+        fieldName: 'efficiency',
+        fieldLabel: 'Efficiency',
+      },
+    ];
+
+    for(let dataObj of data){
+      parsedData.push(parseObjectFields(dataObj, fieldsForParsing));
+    }
+
+    parsedDataItem = parsedData[0];
+
+    if(this.fieldsForSummary.length > 0){
+      for(let fieldForSummaryName of this.fieldsForSummary){
+        let summaryDataItem = {};
+
+        summaryDataItem.name = fieldForSummaryName;
+        summaryDataItem.value = data.reduce((def, item) => {
+          return def + +item[fieldForSummaryName];
+        }, 0);
+
+        summaryData.push(summaryDataItem);
+      }
+    }
+
+    console.log(summaryData)
+    console.log(parsedDataItem);
+
+    let cells = [];
+
+    for(let dataItemField of parsedDataItem){
+      let itemIndex = summaryData.findIndex((el) => {
+        return el.name === dataItemField.name;
+      });
+      
+      if(itemIndex !== -1){
+        let tableCellTemplate = `
+          <div class="tasks-table__cell">
+            <div class="tasks-table__cell-content">${summaryData[itemIndex].value}</div>
+          </div>
+        `;
+
+        cells.push(tableCellTemplate);
+      }
+
+      if(itemIndex === -1){
+        let tableCellTemplate = `
+          <div class="tasks-table__cell">
+            <div class="tasks-table__cell-content">&nbsp;</div>
+          </div>
+        `;
+
+        cells.push(tableCellTemplate);
+      }
+    }
+
+    let tableCellTemplate = `
+      <div class="tasks-table__cell">
+        <div class="tasks-table__cell-content">Sum</div>
+      </div>
+    `;
+    cells[0] = tableCellTemplate;
+    tableSummaryRow.innerHTML = cells.join('');
+    return tableSummaryRow;
+  }
+
+  updateTableSummary(){
+    this.clearTableSummary();
+
+    let tableFooter = this.element.querySelector('.tasks-table__footer');
+    let newTableSummary = this.createTableSummary(this.tableData);
+
+    if(tableFooter){
+      tableFooter.before(newTableSummary);
+    }
+
+    if(!tableFooter){
+      this.element.append(newTableSummary);
+    }
+
+    return this;
+  }
+
+  clearTableSummary(){
+    let tableSummary = this.element.querySelector('.tasks-table__summary');
+
+    if(tableSummary){
+      tableSummary.remove();
+    }
+
+    return this;
   }
 
   // Table header functions
@@ -363,6 +512,7 @@ class Table{
   }
 }
 
+// FUNCTIONS
 function changeButtonSortingDirection(button){
   let sortingDirection = button.getAttribute('data-sorting-direction');
 

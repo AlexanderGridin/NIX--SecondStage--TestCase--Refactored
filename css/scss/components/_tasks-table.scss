@@ -305,3 +305,19 @@
 {
   width: 100%;
 }
+
+.tasks-table--pseudo .tasks-table__summary
+{
+  margin-top: 8px;
+  color: $text-secondary-color;
+
+  @include tablet
+  {
+    display: none;
+  }
+}
+
+.tasks-table--pseudo .tasks-table__summary .tasks-table__row
+{
+  background-color: #2D333D;
+}
