@@ -1,3 +1,5 @@
+import {removeClassFromElements} from '../utils.js';
+
 class Table{
   constructor(elementSelector){
     this.element = document.querySelector(elementSelector);
@@ -112,21 +114,15 @@ class Table{
             a = a[fieldName].match(/\d/g);
             b = b[fieldName].match(/\d/g);
 
-            // a
             if(a === null){
               a = 0;
-            }
-
-            if(a !== null){
+            } else {
               a = +a.join('');
             }
 
-            // b
             if(b === null){
               b = 0;
-            } 
-            
-            if(b !== null){
+            } else {
               b = +b.join('');
             }
 
@@ -399,16 +395,6 @@ function parseObjectFields(obj, fieldsForParsing = null){
   }
 
   return parsedFields;
-}
-
-function removeClassFromElements(elements, classToRemove){
-  for(let el of elements){
-    if(el.classList.contains(classToRemove)){
-      el.classList.remove(classToRemove);
-    }
-  }
-
-  return elements;
 }
 
 export default Table;

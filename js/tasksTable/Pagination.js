@@ -1,10 +1,10 @@
-import getDataFromUrl from '../utils.js';
+import {getDataFromUrl, removeClassFromElements} from '../utils.js';
 
 class Pagination{
   constructor(elementSelector){
     this.classNames = {
       current: 'current',
-      nexPageButton: 'pagination__button-next',
+      nextPageButton: 'pagination__button-next',
       prevPageButton: 'pagination__button-prev',
       list: 'pagination__list',
       button: 'pagination__button'
@@ -13,7 +13,7 @@ class Pagination{
     this.element = document.querySelector(elementSelector);
     this.elementForPagging = null;
 
-    this.nextPageButton = this.element.querySelector(`.${this.classNames.nexPageButton}`);
+    this.nextPageButton = this.element.querySelector(`.${this.classNames.nextPageButton}`);
     this.prevPageButton = this.element.querySelector(`.${this.classNames.prevPageButton}`);
 
     this.paginationList = this.element.querySelector(`.${this.classNames.list}`);
@@ -66,6 +66,7 @@ function handlePaginationButtons(pagination){
     e.stopPropagation();
 
     let button = e.target.closest('button');
+    let table = pagination.elementForPagging;
 
     if(
       !button ||
@@ -91,6 +92,12 @@ function handlePaginationButtons(pagination){
     // Handle next page button
     if(button.classList.contains(pagination.classNames.nextPageButton)){
       handleNextPageButton(button, pagination);
+    }
+
+    // Remove sorted class from active sorting button
+    if(table.fieldsForSorting.length > 0){
+      let sortingButtons = table.element.querySelectorAll('[data-sorting-field-name]');
+      removeClassFromElements(sortingButtons, 'sorted');
     }
   }
 }
