@@ -1,4 +1,4 @@
-import getDataFromUrl from './utils.js';
+import getDataFromUrl from '../utils.js';
 import Table from './Table.js';
 import Pagination from './Pagination.js';
 
