@@ -39,27 +39,34 @@
 // tasks-table__footer
 .tasks-table__footer
 {
-  align-items: center;
-  display: flex;
   font-size: 1rem;
   padding-left: 30px;
   padding-top: 20px;
 
   @include tablet
   {
-    flex-direction: column;
     padding-left: 0;
   }
 }
 
-.tasks-table__footer-col + .tasks-table__footer-col
+.tasks-table__footer-flex-container
+{
+  align-items: center;
+  display: flex;
+
+  @include tablet
+  {
+    flex-direction: column;
+  }
+}
+
+.tasks-table__footer-flex-item + .tasks-table__footer-flex-item
 {
   margin-left: 12px;
 
   @include tablet
   {
     margin-left: 0;
-    margin-top: 15px;
   }
 }
 

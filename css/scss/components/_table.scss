@@ -1,3 +1,12 @@
+// table__rows-per-page-form
+.table__rows-per-page-form
+{
+  @include tablet
+  {
+    display: none;
+  }
+}
+
 .table__rows-per-page-form .form__item-select
 {
   align-items: center;
@@ -15,4 +24,13 @@
 .table__rows-per-page-form .form__item-select .form__select
 {
   padding: 16px 30px 16px 16px;
+}
+
+// table__rows-summary
+.table__rows-summary
+{
+  @include tablet
+  {
+    display: none;
+  }
 }
