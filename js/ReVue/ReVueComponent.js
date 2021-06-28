@@ -64,7 +64,7 @@ class ReVueComponent{
     handleElementAttributes(this.element, this.attributes);
     handleElementEventListeners(this.element, this.eventListeners);
 
-    ReVue.components.push(this);
+    // ReVue.components.push(this);
     return this;
   }
 

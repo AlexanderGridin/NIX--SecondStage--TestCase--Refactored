@@ -1,10 +1,13 @@
-const ReVue = {
-  components: [],
-  elementsCounter: 0,
+class ReVue{
+  constructor(rootElementSelector){
+    this.components = [];
+    this.elementsCounter = 0;
+    this.rootElement = document.querySelector(rootElementSelector);
+  }
 
   sayHello(){
     console.log('ReVue!');
-  },
+  }
 
   getComponentByName(name){
     let findedComponent = this.components.find((component) => {
@@ -12,12 +15,12 @@ const ReVue = {
     });
 
     return findedComponent;
-  },
+  }
 
   build(components){
     console.time('ReVue build()');
 
-    let app = document.querySelector('#revue-app');
+    let app = this.rootElement;
 
     if(app && components && components.length > 0){
       for(let component of components){
