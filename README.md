@@ -6,7 +6,9 @@
 Данный хостинг является бесплатным, по этому и ссылка такая страшная...
 
 ## Github Pages
-Он включен, но не рендерится таблица, т.к. с Github Pages соединение осущетсвляется по https протоколу, а с тестовоым хостингом по http протоколу.
+Он включен, но не рендерится таблица (вечно отображается loader), по причине следующей ошибки:
+
+> Mixed Content: The page at 'https://alexandergridin.github.io/NIX--SecondStage--TestCase/' was loaded over HTTPS, but requested an insecure resource 'http://f0541354.xsph.ru/tasks'. This request has been blocked; the content must be served over HTTPS.
 
 ## Пагинация
 Пагинация в таблице реализована таким образом, что она хорошо работает и в мобильной версии, по этому я её там не убирал.
