@@ -9,6 +9,7 @@ function main(){
   let table = new Table('#tasks-table');
   let pagination = new Pagination('.pagination');
 
+  table.enableSortByFields('efficiency', 'myTimeSpentByPeriod', 'totalTimeSpentByAll', 'estimation');
   pagination.setElementForPagging(table);
 
   getDataFromUrl(dataUrl).then((data) => {

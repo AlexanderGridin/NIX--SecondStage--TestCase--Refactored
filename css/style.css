@@ -1161,6 +1161,37 @@ th {
   padding: 16px 30px 16px 16px;
 }
 
+.tasks-table__sorting-button {
+  background: none;
+  border: none;
+  border-radius: 0;
+  color: #FFF;
+  font-weight: 600;
+  text-align: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tasks-table__sorting-button:hover {
+  cursor: pointer;
+  color: #8F7FFF;
+  text-decoration: underline;
+}
+
+.tasks-table__sorting-button-icon {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  margin-left: 4px;
+}
+
+.tasks-table__sorting-button.sorted .tasks-table__sorting-button-icon path {
+  fill: #27AE60 !important;
+}
+
 .tasks-table__footer {
   -webkit-box-align: center;
       -ms-flex-align: center;

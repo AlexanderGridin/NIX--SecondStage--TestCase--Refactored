@@ -1,3 +1,34 @@
+// tasks-table__sorting-button
+.tasks-table__sorting-button
+{
+  background: none;
+  border: none;
+  border-radius: 0;
+  color: $text-secondary-color;
+  font-weight: 600;
+  text-align: right;
+  display: flex;
+  align-items: center;
+
+  &:hover
+  {
+    cursor: pointer;
+    color: $layout-accent-color;
+    text-decoration: underline;
+  }
+}
+
+.tasks-table__sorting-button-icon
+{
+  flex-shrink: 0;
+  margin-left: 4px;
+}
+
+.tasks-table__sorting-button.sorted .tasks-table__sorting-button-icon path
+{
+  fill: $success-color !important;
+}
+
 // tasks-table__footer
 .tasks-table__footer
 {
