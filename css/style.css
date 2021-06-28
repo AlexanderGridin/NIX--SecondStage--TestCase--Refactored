@@ -1162,23 +1162,23 @@ th {
 }
 
 .tasks-table__sorting-button {
-  background: none;
-  border: none;
-  border-radius: 0;
-  color: #FFF;
-  font-weight: 600;
-  text-align: right;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: none;
+  border-radius: 0;
+  border: none;
+  color: #FFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 600;
+  text-align: right;
 }
 
 .tasks-table__sorting-button:hover {
-  cursor: pointer;
   color: #8F7FFF;
+  cursor: pointer;
   text-decoration: underline;
 }
 

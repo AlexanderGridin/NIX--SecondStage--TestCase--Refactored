@@ -73,7 +73,6 @@ class Table{
 
     let self = this;
     let sortingButtons = this.element.querySelectorAll('[data-sorting-field-name]');
-    console.log(sortingButtons);
 
     for(let button of sortingButtons){
       button.addEventListener('click', function(e){
@@ -88,7 +87,6 @@ class Table{
         let sortingDirection = button.getAttribute('data-sorting-direction');
 
         let sortedData = self.sortTableDataByField(sortingFieldName, sortingDirection);
-        console.log(sortedData)
 
         self.clearBody();
         self.updateBody(sortedData);
@@ -229,7 +227,6 @@ class Table{
 
   getTableHeaderRowInnerHTML(parsedFields){
     let tableCells = [];
-    console.log(this.fieldsForSorting);
 
     fillTableCellTemplate:
     for(let field of parsedFields){

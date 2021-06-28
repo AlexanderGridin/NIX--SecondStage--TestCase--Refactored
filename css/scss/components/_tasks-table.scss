@@ -1,19 +1,19 @@
 // tasks-table__sorting-button
 .tasks-table__sorting-button
 {
+  align-items: center;
   background: none;
-  border: none;
   border-radius: 0;
+  border: none;
   color: $text-secondary-color;
+  display: flex;
   font-weight: 600;
   text-align: right;
-  display: flex;
-  align-items: center;
 
   &:hover
   {
-    cursor: pointer;
     color: $layout-accent-color;
+    cursor: pointer;
     text-decoration: underline;
   }
 }
