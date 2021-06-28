@@ -4,16 +4,20 @@ class Pagination{
   constructor(elementSelector){
     this.classNames = {
       current: 'current',
+      nexPageButton: 'pagination__button-next',
+      prevPageButton: 'pagination__button-prev',
+      list: 'pagination__list',
+      button: 'pagination__button'
     }
     
     this.element = document.querySelector(elementSelector);
     this.elementForPagging = null;
 
-    this.nextPageButton = this.element.querySelector('.pagination__button-next');
-    this.prevPageButton = this.element.querySelector('.pagination__button-prev');
+    this.nextPageButton = this.element.querySelector(`.${this.classNames.nexPageButton}`);
+    this.prevPageButton = this.element.querySelector(`.${this.classNames.prevPageButton}`);
 
-    this.paginationList = this.element.querySelector('.pagination__list');
-    this.pageButtons = this.paginationList.querySelectorAll('.pagination__button');
+    this.paginationList = this.element.querySelector(`.${this.classNames.list}`);
+    this.pageButtons = this.paginationList.querySelectorAll(`.${this.classNames.button}`);
     this.pageButtonsTotal = this.pageButtons.length;
     this.currentPageButtonIndex = 0;
 
@@ -65,14 +69,14 @@ function handlePaginationButtons(pagination){
 
     if(
       !button ||
-      !button.classList.contains('pagination__button') ||
+      !button.classList.contains(pagination.classNames.button) ||
       button.hasAttribute('disabled') ||
       button.classList.contains(pagination.classNames.current)
     ){
       return;
     }
 
-    let paginationList = button.closest('.pagination__list');
+    let paginationList = button.closest(`.${pagination.classNames.list}`);
     
     // Handle page button
     if(paginationList){
@@ -80,12 +84,12 @@ function handlePaginationButtons(pagination){
     }
 
     // Handle prev page button
-    if(button.classList.contains('pagination__button-prev')){
+    if(button.classList.contains(pagination.classNames.prevPageButton)){
       handlePrevPageButton(button, pagination);
     }
 
     // Handle next page button
-    if(button.classList.contains('pagination__button-next')){
+    if(button.classList.contains(pagination.classNames.nextPageButton)){
       handleNextPageButton(button, pagination);
     }
   }

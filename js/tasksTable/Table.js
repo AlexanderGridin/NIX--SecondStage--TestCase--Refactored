@@ -79,6 +79,7 @@ class Table{
         e.preventDefault();
         e.stopPropagation();
 
+        // Set sorting direction attribute if it absent
         if(!button.hasAttribute('data-sorting-direction')){
           button.setAttribute('data-sorting-direction', 'ASC');
         }
@@ -111,15 +112,21 @@ class Table{
             a = a[fieldName].match(/\d/g);
             b = b[fieldName].match(/\d/g);
 
+            // a
             if(a === null){
               a = 0;
-            } else {
+            }
+
+            if(a !== null){
               a = +a.join('');
             }
 
+            // b
             if(b === null){
               b = 0;
-            } else {
+            } 
+            
+            if(b !== null){
               b = +b.join('');
             }
 
