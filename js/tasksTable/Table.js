@@ -192,12 +192,17 @@ class Table{
     return tableSummary;
   }
 
-  // TODO: этой функции не помешает рефакторинг...
+  // TODO: этой функции жизненно необходим рефакторинг...
   createTableSummaryRow(data){
-    let parsedDataItem = null;
     let tableSummaryRow = document.createElement('div');
     tableSummaryRow.classList.add('tasks-table__row');
+
+    let cells = [];
+    let tableCellTemplate = '';
+
     let parsedData = [];
+    let parsedDataItem = null;
+
     let summaryData = [];
     let fieldsForParsing = [
       {
@@ -234,12 +239,15 @@ class Table{
       },
     ];
 
+    // Parse data
     for(let dataObj of data){
       parsedData.push(parseObjectFields(dataObj, fieldsForParsing));
     }
 
+    // Get first data item
     parsedDataItem = parsedData[0];
 
+    // Prepare summary data
     if(this.fieldsForSummary.length > 0){
       for(let fieldForSummaryName of this.fieldsForSummary){
         let summaryDataItem = {};
@@ -253,18 +261,14 @@ class Table{
       }
     }
 
-    console.log(summaryData)
-    console.log(parsedDataItem);
-
-    let cells = [];
-
+    // Prepare table cells
     for(let dataItemField of parsedDataItem){
       let itemIndex = summaryData.findIndex((el) => {
         return el.name === dataItemField.name;
       });
       
       if(itemIndex !== -1){
-        let tableCellTemplate = `
+        tableCellTemplate = `
           <div class="tasks-table__cell">
             <div class="tasks-table__cell-content">${summaryData[itemIndex].value}</div>
           </div>
@@ -274,7 +278,7 @@ class Table{
       }
 
       if(itemIndex === -1){
-        let tableCellTemplate = `
+        tableCellTemplate = `
           <div class="tasks-table__cell">
             <div class="tasks-table__cell-content">&nbsp;</div>
           </div>
@@ -284,12 +288,14 @@ class Table{
       }
     }
 
-    let tableCellTemplate = `
+    // Set first cell hardcoded value
+    tableCellTemplate = `
       <div class="tasks-table__cell">
         <div class="tasks-table__cell-content">Sum</div>
       </div>
     `;
     cells[0] = tableCellTemplate;
+    
     tableSummaryRow.innerHTML = cells.join('');
     return tableSummaryRow;
   }
