@@ -8,6 +8,7 @@
   color: $text-secondary-color;
   display: flex;
   font-weight: 600;
+  line-height: 1.3;
   text-align: right;
 
   &:hover
@@ -208,7 +209,7 @@
 .tasks-table--pseudo .tasks-table__header-cell:nth-child(5),
 .tasks-table--pseudo .tasks-table__cell:nth-child(5)
 {
-  max-width: 100px;
+  max-width: 113px;
   text-align: right;
 
   @include tablet
