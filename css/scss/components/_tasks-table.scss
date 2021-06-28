@@ -94,7 +94,7 @@
 
 .tasks-table--pseudo .tasks-table__header .tasks-table__row
 {
-  background-color: #2D333D;
+  background-color: $table-header-bg;
 }
 
 .tasks-table--pseudo .tasks-table__body
@@ -109,12 +109,12 @@
 
 .tasks-table--pseudo .tasks-table__body .tasks-table__row:nth-child(even)
 {
-  background-color: #242B35;
+  background-color: $table-row-even-bg;
 }
 
 .tasks-table--pseudo .tasks-table__body .tasks-table__row:nth-child(odd)
 {
-  background-color: #1E242F;
+  background-color: $table-row-odd-bg;
 
   @include tablet
   {
@@ -308,8 +308,8 @@
 
 .tasks-table--pseudo .tasks-table__summary
 {
-  margin-top: 8px;
   color: $text-secondary-color;
+  margin-top: 8px;
 
   @include tablet
   {
@@ -319,5 +319,5 @@
 
 .tasks-table--pseudo .tasks-table__summary .tasks-table__row
 {
-  background-color: #2D333D;
+  background-color: $table-header-bg;
 }

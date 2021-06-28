@@ -1549,8 +1549,8 @@ th {
 }
 
 .tasks-table--pseudo .tasks-table__summary {
-  margin-top: 8px;
   color: #FFF;
+  margin-top: 8px;
 }
 
 @media screen and (max-width: 991px) {

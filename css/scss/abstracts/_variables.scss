@@ -29,6 +29,11 @@ $layout-accent-color-lighter: #C7BFFF;
 $layout-accent-color-medium-darker: #564ebb;
 $layout-accent-color-darker: #614afe;
 
+// -- table
+$table-header-bg: #2D333D;
+$table-row-even-bg: #242B35;
+$table-row-odd-bg: #1E242F;
+
 // -- gradients
 $primary-top-to-bottom-gradient: linear-gradient(0deg, rgba(191,186,250,1) 0%, rgba(97,74,254,1) 100%);
 $primary-left-to-right-gradient: linear-gradient(270deg, rgba(122,116,203,1) 0%, rgba(86,78,187,1) 100%);
