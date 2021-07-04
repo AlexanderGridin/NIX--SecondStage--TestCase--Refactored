@@ -1,53 +1,342 @@
 import {removeClassFromElements} from '../utils.js';
 
 class Table{
-  constructor(elementSelector){
-    this.element = document.querySelector(elementSelector);
+  constructor(wrapperSelector, {
+    tagName,
+    classNames: {
+      body: bodyClassName,
+      row: rowClassName,
+      cell: cellClassName,
+    },
 
-    this.fieldsForSorting = [];
+    header: {
+      create: isHeaderCreate,
+      className: headerClassName,
+    },
+    summary: {
+      create: isSummaryCreate,
+      className: summaryClassName,
+      title: summaryTitle,
+    },
+    footer: {
+      create: isFooterCreate,
+      className: footerClassName,
+    },
+
+    columns,
+    bodyCellInnerTemplate,
+
+  }){
+    this.tagName = tagName;
+    this.wrapperElement = document.querySelector(wrapperSelector);
+
+    this.classNames = {
+      body: bodyClassName,
+      row: rowClassName,
+      cell: cellClassName,
+    };
+
+    this.header = {
+      create: isHeaderCreate,
+      className: headerClassName,
+    };
+    this.body = {
+      className: bodyClassName,
+    };
+    this.summary = {
+      create: isSummaryCreate,
+      className: summaryClassName,
+      title: summaryTitle,
+    };
+    this.footer = {
+      create: isFooterCreate,
+      className: footerClassName,
+    },
+
+    this.columns = columns;
+    this.bodyCellInnerTemplate = bodyCellInnerTemplate;
+
+    this.sortingButtons = [];
     this.fieldsForSummary = [];
+    this.data = null;
 
-    this.tableData = null;
+    // this.tagName = props.tagName;
+    // this.wrapperElement = document.querySelector(props.wrapper);
+
+    // this.classNames = {
+    //   body: props.classNames.body,
+    //   row: props.classNames.row,
+    //   cell: props.classNames.cell,
+    // };
+
+    // this.header = props.header;
+    // this.body = {
+    //   className: props.classNames.body,
+    // };
+    // this.summary = props.summary;
+    // this.footer = props.footer;
+
+    // this.columns = props.columns;
+    // this.bodyCellInnerTemplate = props.bodyCellInnerTemplate;
+
+    // this.sortingButtons = [];
+
+    // this.fieldsForSummary = [];
+
+    // this.data = null;
+
+    this._init();
   }
 
-  build(data){
-    this.tableData = data;
+  _init(){
+    if(this.header.create && this.tagName === 'div'){
+      this.header.element = document.createElement(this.tagName);
+      this.header.element.classList.add(this.header.className);
+    }
 
-    this.element.prepend(this.createTableSummary(data));
-    this.element.prepend(this.createTableBody(data));
-    this.element.prepend(this.createTableHeader(data));
+    if(this.tagName === 'div'){
+      this.body.element = document.createElement(this.tagName);
+    }
 
-    this.handleSortingButtons(this.fieldsForSorting);
+    if(this.tagName === 'table'){
+      this.body.element = document.createElement('tbody');
+    }
 
-    return this;
-  }
+    this.body.element.classList.add(this.body.className);
 
-  setFieldsForSummary(...fieldsNames){
-    this.fieldsForSummary = fieldsNames;
-    return this;
-  }
+    if(this.summary.create && this.tagName === 'div'){
+      this.summary.element = document.createElement(this.tagName);
+      this.summary.element.classList.add(this.summary.className);
+    }
 
-  setLoader(){
-    this.element.classList.add('loading');
-  }
-
-  removeLoader(){
-    this.element.classList.remove('loading');
-  }
-
-  enableSortByFields(...fieldNames){
-    for(let name of fieldNames){
-      let field = {};
-      field[name] = true;
-
-      this.fieldsForSorting.push(field);
+    if(this.footer.create && this.tagName === 'div'){
+      this.footer.element = document.createElement(this.tagName);
+      this.footer.element.classList.add(this.footer.className);
     }
 
     return this;
   }
 
+  build(data){
+    this._render(data);
+    this._handleSortingButtons();
+
+    return this;
+  }
+
+  _render(data){
+    this.data = data;
+
+    if(this.header.create){
+      this._fillHeader(data);
+      this.wrapperElement.append(this.header.element);
+    }
+    
+    this._fillBody(data);
+    this.wrapperElement.append(this.body.element);
+
+    if(this.summary.create){
+      this._fillSummary(data);
+      this.wrapperElement.append(this.summary.element);
+    }
+    
+    if(this.footer.create){
+      this.wrapperElement.append(this.footer.element);
+    }
+
+    return this;
+  }
+
+  _handleSortingButtons(){
+    if(this.sortingButtons.length === 0){
+      return;
+    }
+
+    let self = this;
+
+    for(let button of this.sortingButtons){
+      button.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+
+        let sortingFieldName = button.getAttribute('data-sorting-column-name');
+        let sortingDirection = button.getAttribute('data-sorting-direction');
+        let sortedData = self.sortTableDataByField(sortingFieldName, sortingDirection);
+
+        self.clearBody();
+        self.updateBody(sortedData);
+
+        changeButtonSortingDirection(button);
+        removeClassFromElements(self.sortingButtons, 'sorted')
+        button.classList.add('sorted');
+      });
+    }
+  }
+
+  _fillHeader(data){
+    let dataItem = data[0];
+    this.header.element.append(this._createRow(dataItem, 'header'));
+    return this.header.element;
+  }
+
+  _fillBody(data){
+    for(let dataRow of data){
+      this.body.element.append(this._createRow(dataRow));
+    }
+
+    return this.body.element;
+  }
+
+  _fillSummary(data){
+    let dataItem = data[0];
+    this.summary.element.append(this._createRow(dataItem, 'summary'));
+    return this.summary.element;
+  }
+
+  _createRow(dataRow, type = 'body'){
+    let rowElement = this._createRowElement();
+    rowElement.classList.add(this.classNames.row);
+
+    let dataCells = this._fillDataCellsValues(dataRow, this.columns);
+    let cellsElements = this._createCells(dataCells, type);
+
+    for(let cell of cellsElements){
+      rowElement.append(cell);
+    }
+
+    return rowElement;
+  }
+
+  _createRowElement(){
+    let rowElement = null;
+
+    if(this.tagName === 'div'){
+      rowElement = document.createElement(this.tagName);
+    }
+
+    if(this.tagName === 'table'){
+      rowElement = document.createElement('tr');
+    }
+
+    return rowElement;
+  }
+
+  _fillDataCellsValues(dataRow, columns = null){
+    if(!columns){
+      return dataRow;
+    }
+
+    let columnsWithValues = [];
+
+    for(let col of columns){
+      col.value = dataRow[col.name];
+      columnsWithValues.push(col);
+    }
+
+    return columnsWithValues;
+  }
+
+  _createCells(dataCells, type){
+    let cells = [];
+
+    for(let cell of dataCells){
+      let cellElement = this._createCellElement(cell);
+      cellElement.classList.add(this.classNames.cell);
+
+      if(type === 'header'){
+        cells.push(this._fillHeaderCell(cell));
+      }
+
+      if(type === 'body'){
+        this._callCellHandlers(cell);
+        cells.push(this._fillBodyCell(cell));
+      }
+
+      if(type === 'summary'){
+        cells.push(this._fillSummaryCell(cell));
+      }
+    }
+
+    return cells;
+  }
+
+  _createCellElement(cell){
+    if(this.tagName === 'div'){
+      cell.element = document.createElement(this.tagName);
+    }
+
+    if(this.tagName === 'table' && !isHeaderCell){
+      cell.element = document.createElement('td');
+    }
+
+    if(this.tagName === 'table' && isHeaderCell){
+      cell.element = document.createElement('th');
+    }
+
+    return cell.element;
+  }
+
+  _callCellHandlers(cell){
+    if(cell.handlers && cell.handlers.length > 0){
+      for(let handler of cell.handlers){
+        handler.call(cell);
+      }
+    }
+  }
+
+  _fillHeaderCell(column){
+    if(!column.sorter){
+      column.element.innerHTML = column.title;
+    }
+
+    if(column.sorter){
+      let sortingButton = document.createElement('button');
+      sortingButton.setAttribute('type', 'button');
+      sortingButton.setAttribute('data-sorting-column-name', column.name);
+      sortingButton.setAttribute('data-sorting-type', column.sorter.type);
+      sortingButton.setAttribute('data-sorting-direction', 'ASC');
+      sortingButton.classList.add(column.sorter.className);
+      sortingButton.innerHTML = `${column.title}${column.sorter.icon}`;
+
+      this.sortingButtons.push(sortingButton);
+      column.element.append(sortingButton);
+    }
+    
+    return column.element;
+  }
+
+  _fillBodyCell(column){
+    let cellInnerTpl = '';
+
+    if(this.bodyCellInnerTemplate){
+      cellInnerTpl = this.bodyCellInnerTemplate;
+
+      for(let prop in column){
+        cellInnerTpl = cellInnerTpl.replace(`@${prop}`, column[prop]);
+      }
+    }
+
+    if(!this.bodyCellInnerTemplate){
+      cellInnerTpl = column.value;
+    }
+
+    column.element.innerHTML = cellInnerTpl;
+    return column.element;
+  }
+
+  _fillSummaryCell(cell)
+  {
+
+  }
+
+  // ! OLD CODE
+  setFieldsForSummary(...fieldsNames){
+    this.fieldsForSummary = fieldsNames;
+    return this;
+  }
+
   updateBody(data){
-    let tableHeader = this.element.querySelector('.tasks-table__header');
+    let tableHeader = this.wrapperElement.querySelector('.tasks-table__header');
 
     this.clearBody();
     let newTableBody = this.createTableBody(data);
@@ -57,58 +346,24 @@ class Table{
     }
 
     if(!tableHeader){
-      this.element.prepend(newTableBody);
+      this.wrapperElement.prepend(newTableBody);
     }
 
-    this.tableData = data;
+    this.data = data;
 
     return this;
   }
 
   clearBody(){
-    let body = this.element.querySelector('.tasks-table__body');
+    let body = this.wrapperElement.querySelector('.tasks-table__body');
 
     if(body){
       body.remove();
     }
 
-    this.tableData = null;
+    this.data = null;
 
     return this;
-  }
-
-  handleSortingButtons(fieldsForSorting){
-    if(fieldsForSorting.length === 0){
-      return;
-    }
-
-    let self = this;
-    let sortingButtons = this.element.querySelectorAll('[data-sorting-field-name]');
-
-    for(let button of sortingButtons){
-      button.addEventListener('click', function(e){
-        e.preventDefault();
-        e.stopPropagation();
-
-        // Set sorting direction attribute if it absent
-        if(!button.hasAttribute('data-sorting-direction')){
-          button.setAttribute('data-sorting-direction', 'ASC');
-        }
-
-        let sortingFieldName = button.getAttribute('data-sorting-field-name');
-        let sortingDirection = button.getAttribute('data-sorting-direction');
-
-        let sortedData = self.sortTableDataByField(sortingFieldName, sortingDirection);
-
-        self.clearBody();
-        self.updateBody(sortedData);
-
-        changeButtonSortingDirection(button);
-
-        removeClassFromElements(sortingButtons, 'sorted')
-        button.classList.add('sorted');
-      });
-    }
   }
 
   // TODO
@@ -120,7 +375,7 @@ class Table{
     if(fieldName.toLowerCase() === 'efficiency'){
       switch(sortDirection){
         case 'asc':
-          sortedData = this.tableData.sort((a, b) => {
+          sortedData = this.data.sort((a, b) => {
             a = a[fieldName].match(/\d/g);
             b = b[fieldName].match(/\d/g);
 
@@ -141,7 +396,7 @@ class Table{
           break;
 
         case 'desc':
-          sortedData = this.tableData.sort((a, b) => {
+          sortedData = this.data.sort((a, b) => {
             a = a[fieldName].match(/\d/g);
             b = b[fieldName].match(/\d/g);
 
@@ -167,13 +422,13 @@ class Table{
 
     switch(sortDirection){
       case 'asc':
-        sortedData = this.tableData.sort((a, b) => {
+        sortedData = this.data.sort((a, b) => {
           return +a[fieldName] - +b[fieldName];
         });
         break;
 
       case 'desc':
-        sortedData = this.tableData.sort((a, b) => {
+        sortedData = this.data.sort((a, b) => {
           return +b[fieldName] - +a[fieldName];
         });
         break;
@@ -303,22 +558,22 @@ class Table{
   updateTableSummary(){
     this.clearTableSummary();
 
-    let tableFooter = this.element.querySelector('.tasks-table__footer');
-    let newTableSummary = this.createTableSummary(this.tableData);
+    let tableFooter = this.wrapperElement.querySelector('.tasks-table__footer');
+    let newTableSummary = this.createTableSummary(this.data);
 
     if(tableFooter){
       tableFooter.before(newTableSummary);
     }
 
     if(!tableFooter){
-      this.element.append(newTableSummary);
+      this.wrapperElement.append(newTableSummary);
     }
 
     return this;
   }
 
   clearTableSummary(){
-    let tableSummary = this.element.querySelector('.tasks-table__summary');
+    let tableSummary = this.wrapperElement.querySelector('.tasks-table__summary');
 
     if(tableSummary){
       tableSummary.remove();
@@ -535,6 +790,7 @@ function changeButtonSortingDirection(button){
   return button;
 }
 
+// ! For deprecation
 function parseObjectFields(obj, fieldsForParsing = null){
   if(!fieldsForParsing){
     return obj;
