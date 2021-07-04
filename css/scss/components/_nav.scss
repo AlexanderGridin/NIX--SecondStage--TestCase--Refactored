@@ -1,0 +1,123 @@
+// main-nav__mobile-button
+.main-nav__toggler {
+	border-bottom-left-radius: 7px;
+	border-top-left-radius: 7px;
+	display: none;
+	font-size: 0;
+
+	@include laptop {
+		display: block;
+		margin-right: -10px;
+		padding: 20px 15px;
+	}
+
+	&::before {
+		background-image: url(../imgs/menu.svg);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		content: '';
+		display: block;
+		height: 24px;
+		width: 24px;
+	}
+}
+
+// main-nav__list
+.main-nav__list {
+	align-items: center;
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	@include laptop {
+		display: none;
+	}
+}
+
+.main-nav__list.visible {
+	background-color: $layout-primary-color;
+	border-bottom: 2px solid $layout-accent-color;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+	display: block;
+	flex-direction: column;
+	left: 0;
+	position: absolute;
+	top: 67px;
+	width: 100%;
+	z-index: 9;
+}
+
+// main-nav__item
+.main-nav__item {
+	&:last-child{
+		margin: 0px 24px 0px 0px;
+	}
+	@include desktop {
+		margin: 0px 25px 0px 0px;
+	}
+	@include laptop {
+		width: 100%;
+	}
+}
+
+// main-nav__link
+.main-nav__link:link,
+.main-nav__link:visited {
+	align-items: center;
+	color: $text-primary-color;
+	display: flex;
+	font-weight: 600;
+	padding: 25px 24px;
+	position: relative;
+	transition: 0.4s;
+
+	@include desktop {
+		padding: 15px 10px;
+	}
+}
+
+.main-nav__link::after {
+	background-color: $layout-accent-color;
+	background-image: $primary-top-to-bottom-gradient;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	bottom: -1px;
+	content: '';
+	display: block;
+	height: 3px;
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	transition: opacity 0.4s;
+	width: 100%;
+}
+
+.main-nav__link:hover::after,
+.main-nav__link.current::after {
+	opacity: 1;
+}
+
+.main-nav__link:hover,
+.main-nav__link.current {
+	background-color: $layout-secondary-color-lighter;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	color: $layout-accent-color;
+	text-decoration: none;
+}
+
+// main-nav__link-icon
+.main-nav__link-icon {
+	margin-right: 4px;
+}
+
+.main-nav__link-icon path {
+	transition: 0.4s;
+}
+
+.main-nav__link:hover .main-nav__link-icon path,
+.main-nav__link.current .main-nav__link-icon path {
+	fill: $layout-accent-color !important;
+}

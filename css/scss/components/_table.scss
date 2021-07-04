@@ -1,36 +1,29 @@
 // table__rows-per-page-form
-.table__rows-per-page-form
-{
-  @include tablet
-  {
-    display: none;
-  }
+.table__rows-per-page-form {
+	@include tablet {
+		display: none;
+	}
 }
 
-.table__rows-per-page-form .form__item-select
-{
-  align-items: center;
-  display: flex;
+.table__rows-per-page-form .form__item-select {
+	align-items: center;
+	display: flex;
 }
 
-.table__rows-per-page-form .form__item-select .form__label
-{
-  color: $text-primary-color;
-  font-weight: 400;
-  margin: 0;
-  margin-right: 12px;
+.table__rows-per-page-form .form__item-select .form__label {
+	color: $text-primary-color;
+	font-weight: 400;
+	margin: 0;
+	margin-right: 12px;
 }
 
-.table__rows-per-page-form .form__item-select .form__select
-{
-  padding: 16px 30px 16px 16px;
+.table__rows-per-page-form .form__item-select .form__select {
+	padding: 16px 30px 16px 16px;
 }
 
 // table__rows-summary
-.table__rows-summary
-{
-  @include tablet
-  {
-    display: none;
-  }
+.table__rows-summary {
+	@include tablet {
+		display: none;
+	}
 }

@@ -1,51 +1,40 @@
 // form__label
-.form__label
-{
-  color: $layout-accent-color-lighter;
-  display: block;
-  font-weight: 600;
-  margin-bottom: 10px;
+.form__label {
+	color: $layout-accent-color-lighter;
+	display: block;
+	font-weight: 600;
+	margin-bottom: 10px;
 }
 
 // form__item-checkbox
-.form__item-checkbox
-{
-  align-items: center;
-  display: flex;
+.form__item-checkbox {
+	align-items: center;
+	display: flex;
 }
 
-.form__item-checkbox .form__label
-{
-  color: $text-primary-color;
-  font-weight: 400;
-  margin: 0;
+.filter__label {
+	color: $text-primary-color;
+	font-weight: 400;
+	margin: 0;
 }
 
 // form__checkbox
-.form__checkbox
-{
-  appearance: none;
-  border-radius: 3px;
-  border: 1px solid $layout-accent-color;
-  height: 20px;
-  width: 20px;
+.form__checkbox {
+	appearance: none;
+	border-radius: 3px;
+	border: 1px solid $layout-accent-color;
+	height: 20px;
+	width: 20px;
 
-  &:hover
-  {
-    cursor: pointer;
-  }
+	&:hover {
+		cursor: pointer;
+	}
 
-  &:checked
-  {
-    background-color: $layout-accent-color;
-    background-image: url(../imgs/check.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 12px 9px;
-  }
-}
-
-.form__checkbox--left
-{
-  margin-right: 12px;
+	&:checked {
+		background-color: $layout-accent-color;
+		background-image: url(../imgs/check.svg);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 12px 9px;
+	}
 }

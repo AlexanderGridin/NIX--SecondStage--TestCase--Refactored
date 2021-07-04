@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', main);
 
 function main(){
   handleMobileMenuButton({
-    menuButtonSelector: '.horizontal-nav__mobile-button', 
-    menuListSelector: '.horizontal-nav__list',
+    menuButtonSelector: '.main-nav__toggler', 
+    menuListSelector: '.main-nav__list',
   });
 
   initTableAndPagination();
