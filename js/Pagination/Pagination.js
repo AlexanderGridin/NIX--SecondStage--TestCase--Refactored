@@ -1,5 +1,12 @@
 import DOMObject from './DOMObject.js';
 
+/**
+ * Костя, в этом и других классах я использовал много деструктуризации.
+ * Основная идея - наглядное представление всех свойств класса и параметров конструктора.
+ * Очень интересно было бы узнать, применяется ли такой подход на реальных проектах + узнать свои ошибки при применении данного подхода, т.к. подозреваю, что местами она избыточна, но на дополнительный рефакторинг времени у меня не осталось :(
+ * ...Гридин.
+ */
+
 export default class Pagination{
   wrapper;
   DOMObject;
@@ -224,7 +231,7 @@ export default class Pagination{
       let currentPageButton = pagination.pager.pagesButtons[currentPageButtonIndex]; 
 
       // Disable button if currentPageButton is the last
-      if(!pagination.pager.pagesButtons[currentPageButtonIndex + 2]){
+      if(!pagination.pager.pagesButtons[currentPageButtonIndex + 1]){
         nextButton.setAttribute('disabled', 'disabled');
       }
 
@@ -259,7 +266,7 @@ export default class Pagination{
       let currentPageButton = pagination.pager.pagesButtons[currentPageButtonIndex]; 
 
       // Disable button if currentPageButton is the first
-      if(!pagination.pager.pagesButtons[currentPageButtonIndex - 2]){
+      if(!pagination.pager.pagesButtons[currentPageButtonIndex - 1]){
         prevButton.setAttribute('disabled', 'disabled');
       }
 
@@ -343,9 +350,14 @@ export default class Pagination{
 
   nextPage(callback){
     let nextButton = this.pager.nextButton.element;
-
+    
     if(callback && typeof callback === 'function'){
-      nextButton.addEventListener('click', callback);
+      nextButton.addEventListener('click', () => {
+        let currentPageButton = this.pager.pagesButtons[this.currentPageButtonIndex].element;
+        let dataUrl = currentPageButton.getAttribute('data-url');
+
+        callback(dataUrl);
+      });
     }
 
     return this;
@@ -355,7 +367,12 @@ export default class Pagination{
     let prevButton = this.pager.prevButton.element;
 
     if(callback && typeof callback === 'function'){
-      prevButton.addEventListener('click', callback);
+      prevButton.addEventListener('click', () => {
+        let currentPageButton = this.pager.pagesButtons[this.currentPageButtonIndex].element;
+        let dataUrl = currentPageButton.getAttribute('data-url');
+        
+        callback(dataUrl);
+      });
     }
 
     return this;
@@ -366,7 +383,20 @@ export default class Pagination{
 
     if(callback && typeof callback === 'function'){
       for(let button of pageButtons){
-        button.element.addEventListener('click', callback);
+        button.element.addEventListener('click', (e) => {
+          /**
+           * Код ниже по сути является заплаткой.
+           * Я не успел разобраться, почему здесь не работает код, аналогичный методам prevPage() и nextPage(). В связи с этим родилась данная заплатка....Гридин.
+           */
+          let selectedButton = e.target.closest('button');
+
+          if(selectedButton.classList.contains(this.classNames.current)){
+            return;
+          }
+
+          let dataUrl = selectedButton.getAttribute('data-url');
+          callback(dataUrl);
+        });
       }
     }
 

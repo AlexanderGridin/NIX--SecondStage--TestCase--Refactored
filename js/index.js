@@ -16,6 +16,7 @@ function main(){
 // Functions
 function initDynamicElements(){
   let table = initTable();
+  table.setLoader();
   console.log(table);
 
   let pagination = initPagination();
@@ -23,11 +24,35 @@ function initDynamicElements(){
 
   table.footer.element.append(pagination.wrapper);
 
-  table.setLoader();
+  pagination.nextPage((dataUrl) => {
+    table.setLoader();
+    console.log(dataUrl)
+
+    getDataFromUrl(dataUrl).then((data) => {
+      table.updateBody(data).removeLoader();
+    });
+  });
+
+  pagination.prevPage((dataUrl) => {
+    table.setLoader();
+    console.log(dataUrl)
+
+    getDataFromUrl(dataUrl).then((data) => {
+      table.updateBody(data).removeLoader();
+    });
+  });
+
+  pagination.selectPage((dataUrl) => {
+    table.setLoader();
+    console.log(dataUrl)
+
+    getDataFromUrl(dataUrl).then((data) => {
+      table.updateBody(data).removeLoader();
+    });
+  });
 
   let dataUrl = 'http://f0541354.xsph.ru/tasks';
   getDataFromUrl(dataUrl).then((data) => {
-    console.log(data);
     table.build(data).removeLoader();
   });
 }
@@ -167,7 +192,10 @@ function initPagination(){
       },
       {
         href: 'http://f0541354.xsph.ru/tasks?page=1',
-      }
+      },
+      {
+        href: 'http://f0541354.xsph.ru/tasks',
+      },
     ],
   });
 

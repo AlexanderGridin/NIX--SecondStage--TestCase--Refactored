@@ -3,6 +3,12 @@ import TableRow from './TableRow.js';
 import TableCell from './TableCell.js';
 import {utils} from './utils.js';
 
+/**
+ * Костя, в этом и других классах я использовал много деструктуризации.
+ * Основная идея - наглядное представление всех свойств класса и параметров конструктора.
+ * Очень интересно было бы узнать, применяется ли такой подход на реальных проектах + узнать свои ошибки при применении данного подхода, т.к. подозреваю, что местами она избыточна, но на дополнительный рефакторинг времени у меня не осталось :(
+ * ...Гридин.
+ */
 class Table{
   constructor(wrapperSelector, {
     tagName,
@@ -281,13 +287,13 @@ class Table{
     return this;
   }
 
-  _updateData(data){
-    this.data = data;
+  _clearData(){
+    this.data = null;
     return this;
   }
 
-  _clearData(){
-    this.data = null;
+  _updateData(data){
+    this.data = data;
     return this;
   }
 
@@ -312,6 +318,10 @@ class Table{
         });
 
       row.addCell(cell);
+
+      if(parentElement === 'header' && cell.sortingButton){
+        this.sortingButtons.push(cell.sortingButton);
+      }
     }
 
     row.build();
