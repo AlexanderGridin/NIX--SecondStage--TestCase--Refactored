@@ -1,0 +1,68 @@
+.pager
+{
+  display: flex;
+  align-items: center;
+  background-color: $layout-secondary-color;
+  border-radius: 7px;
+  border: 1px solid $layout-secondary-color-lighter;
+  padding: 8px;
+}
+
+// pager__list
+.pager__list
+{
+  display: inline-flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0 5px;
+  padding: 0;
+}
+
+.pager__list-item + .pager__list-item
+{
+  margin-left: 5px;
+}
+
+// pager__button
+.pager__button
+{
+  background-color: transparent;
+  border-radius: 4px;
+  border: none;
+  color: $text-primary-color;
+  padding: 8px 12px;
+  transition: 0.4s;
+
+  &:hover,
+  &.current
+  {
+    background-color: $layout-accent-color;
+    color: $text-secondary-color;
+    cursor: pointer;
+  }
+}
+
+.pager__button[disabled]
+{
+  background-color: transparent;
+  cursor: not-allowed;
+  opacity: 0.5;
+
+  &:hover
+  {
+    color: $text-primary-color;
+  }
+}
+
+.pager__button-prev,
+.pager__button-next
+{
+  align-items: center;
+  display: inline-flex;
+  font-size: 0;
+}
+
+.pager__button-prev .pager__button-icon
+{
+  transform: rotate(180deg);
+}

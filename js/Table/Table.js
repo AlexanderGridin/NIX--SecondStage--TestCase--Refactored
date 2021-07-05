@@ -428,8 +428,6 @@ class Table{
 
   // ! OLD CODE
   // TODO
-  
-
   updateTableSummary(){
     this.clearTableSummary();
 

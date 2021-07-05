@@ -1605,33 +1605,82 @@ th {
   background-color: #2D333D;
 }
 
-.pagination,
-.pagination__list {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.pagination {
+@media screen and (max-width: 767px) {
+  .pagination {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.pagination > div + div {
+  margin-left: 12px;
+}
+
+@media screen and (max-width: 767px) {
+  .pagination > div + div {
+    margin-left: 0;
+    margin-top: 15px;
+  }
+}
+
+.pagination__rows-per-page-form .form__item-select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pagination__rows-per-page-form .form__label {
+  margin: 0;
+  margin-right: 12px;
+  font-weight: 400;
+  color: #B6B4C6;
+}
+
+.pager {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #242B35;
   border-radius: 7px;
   border: 1px solid #3D444E;
   padding: 8px;
 }
 
-.pagination__list {
+.pager__list {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   list-style: none;
   margin: 0 5px;
   padding: 0;
 }
 
-.pagination__list-item + .pagination__list-item {
+.pager__list-item + .pager__list-item {
   margin-left: 5px;
 }
 
-.pagination__button {
+.pager__button {
   background-color: transparent;
   border-radius: 4px;
   border: none;
@@ -1641,24 +1690,24 @@ th {
   transition: 0.4s;
 }
 
-.pagination__button:hover, .pagination__button.current {
+.pager__button:hover, .pager__button.current {
   background-color: #8F7FFF;
   color: #FFF;
   cursor: pointer;
 }
 
-.pagination__button[disabled] {
+.pager__button[disabled] {
   background-color: transparent;
   cursor: not-allowed;
   opacity: 0.5;
 }
 
-.pagination__button[disabled]:hover {
+.pager__button[disabled]:hover {
   color: #B6B4C6;
 }
 
-.pagination__button-prev,
-.pagination__button-next {
+.pager__button-prev,
+.pager__button-next {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1668,7 +1717,7 @@ th {
   font-size: 0;
 }
 
-.pagination__button-prev .pagination__button-icon {
+.pager__button-prev .pager__button-icon {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }

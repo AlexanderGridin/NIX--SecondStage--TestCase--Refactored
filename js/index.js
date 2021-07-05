@@ -10,9 +10,18 @@ function main(){
     menuListSelector: '.horizontal-nav__list',
   });
 
-  // initTableAndPagination();
+  initDynamicElements();
+}
+
+// Functions
+function initDynamicElements(){
   let table = initTable();
   console.log(table);
+
+  let pagination = initPagination();
+  console.log(pagination);
+
+  table.footer.element.append(pagination.wrapper);
 
   table.setLoader();
 
@@ -23,7 +32,6 @@ function main(){
   });
 }
 
-// Functions
 function initTable(){
   let tableSorterIcon = `
     <svg class="tasks-table__sorting-button-icon" width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -149,22 +157,21 @@ function initTable(){
   return table;
 }
 
-// ! OLD CODE
-function initTableAndPagination(){
-  let dataUrl = 'http://f0541354.xsph.ru/tasks';
-  let table = new Table('#tasks-table');
-  let pagination = new Pagination('.pagination');
-
-  pagination.setElementForPagging(table);
-
-  table.enableSortByFields('efficiency', 'myTimeSpentByPeriod', 'totalTimeSpentByAll', 'estimation');
-  table.setFieldsForSummary('totalTimeSpentByAll', 'myTimeSpentByPeriod');
-  table.setLoader();
-
-  getDataFromUrl(dataUrl).then((data) => {
-    table.build(data);
-    table.removeLoader();
+function initPagination(){
+  let pagination = new Pagination({
+    selectItemsPerPage: true,
+    summary: true,
+    pagesButtons: [
+      {
+        href: 'http://f0541354.xsph.ru/tasks',
+      },
+      {
+        href: 'http://f0541354.xsph.ru/tasks?page=1',
+      }
+    ],
   });
+
+  return pagination;
 }
 
 function handleMobileMenuButton({menuButtonSelector, menuListSelector}){
