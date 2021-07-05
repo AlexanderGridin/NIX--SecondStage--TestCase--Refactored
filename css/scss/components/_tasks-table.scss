@@ -127,103 +127,139 @@
 	}
 }
 
-.tasks-table--pseudo .tasks-table__header-cell,
-.tasks-table--pseudo .tasks-table__cell {
-	align-items: center;
-	display: flex;
-	margin: 0 5px;
-	max-width: 12.5%;
-	padding: 12px 0;
-	width: 100%;
+.tasks-table--pseudo .tasks-table__header .tasks-table__cell,
+.tasks-table--pseudo .tasks-table__body .tasks-table__cell,
+.tasks-table--pseudo .tasks-table__summary .tasks-table__cell
+{
+  align-items: center;
+  display: flex;
+  margin: 0 5px;
+  max-width: 12.5%;
+  padding: 12px 0;
+  width: 100%;
 
-	@include tablet {
-		align-items: flex-start;
-	}
+  @include tablet
+  {
+    align-items: flex-start;
+  }
 }
 
-.tasks-table--pseudo .tasks-table__header-cell:nth-child(1),
-.tasks-table--pseudo .tasks-table__cell:nth-child(1) {
-	max-width: 160px;
+.tasks-table--pseudo .tasks-table__header .tasks-table__cell:nth-child(1),
+.tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(1),
+.tasks-table--pseudo .tasks-table__summary .tasks-table__cell:nth-child(1)
+{
+  max-width: 160px;
 
-	@include tablet {
-		max-width: none;
-	}
+  @include tablet
+  {
+    max-width: none;
+  }
 }
 
-.tasks-table--pseudo .tasks-table__header-cell:nth-child(2),
-.tasks-table--pseudo .tasks-table__cell:nth-child(2) {
-	max-width: 170px;
+.tasks-table--pseudo .tasks-table__header .tasks-table__cell:nth-child(2),
+.tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(2),
+.tasks-table--pseudo .tasks-table__summary .tasks-table__cell:nth-child(2)
+{
+  max-width: 170px;
 
-	@include tablet {
-		max-width: none;
-	}
+  @include tablet
+  {
+    max-width: none;
+  }
 }
 
-.tasks-table--pseudo .tasks-table__header-cell:nth-child(3),
-.tasks-table--pseudo .tasks-table__cell:nth-child(3) {
-	max-width: 150px;
+.tasks-table--pseudo .tasks-table__header .tasks-table__cell:nth-child(3),
+.tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(3),
+.tasks-table--pseudo .tasks-table__summary .tasks-table__cell:nth-child(3)
+{
+  max-width: 150px;
 
-	@include tablet {
-		max-width: none;
-	}
+  @include tablet
+  {
+    max-width: none;
+  }
 }
 
-.tasks-table--pseudo .tasks-table__header-cell:nth-child(4),
-.tasks-table--pseudo .tasks-table__cell:nth-child(4) {
-	max-width: 103px;
+.tasks-table--pseudo .tasks-table__header .tasks-table__cell:nth-child(4),
+.tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(4),
+.tasks-table--pseudo .tasks-table__summary .tasks-table__cell:nth-child(4)
+{
+  max-width: 103px;
 
-	@include tablet {
-		max-width: none;
-	}
+  @include tablet
+  {
+    max-width: none;
+  }
 }
 
-.tasks-table--pseudo .tasks-table__header-cell:nth-child(5),
-.tasks-table--pseudo .tasks-table__cell:nth-child(5) {
-	max-width: 113px;
-	text-align: right;
+.tasks-table--pseudo .tasks-table__header .tasks-table__cell:nth-child(5),
+.tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(5),
+.tasks-table--pseudo .tasks-table__summary .tasks-table__cell:nth-child(5)
+{
+  max-width: 113px;
+  text-align: right;
+  justify-content: flex-end;
 
-	@include tablet {
-		max-width: none;
-		text-align: left;
-	}
+  @include tablet
+  {
+    max-width: none;
+    text-align: left;
+    justify-content: flex-start;
+  }
 }
 
-.tasks-table--pseudo .tasks-table__header-cell:nth-child(6),
-.tasks-table--pseudo .tasks-table__cell:nth-child(6) {
-	max-width: 135px;
-	text-align: right;
+.tasks-table--pseudo .tasks-table__header .tasks-table__cell:nth-child(6),
+.tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(6),
+.tasks-table--pseudo .tasks-table__summary .tasks-table__cell:nth-child(6)
+{
+  max-width: 135px;
+  text-align: right;
+  justify-content: flex-end;
 
-	@include tablet {
-		max-width: none;
-		text-align: left;
-	}
+  @include tablet
+  {
+    max-width: none;
+    text-align: left;
+    justify-content: flex-start;
+  }
 }
 
-.tasks-table--pseudo .tasks-table__header-cell:nth-child(7),
-.tasks-table--pseudo .tasks-table__cell:nth-child(7) {
-	max-width: 134px;
-	text-align: right;
+.tasks-table--pseudo .tasks-table__header .tasks-table__cell:nth-child(7),
+.tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(7),
+.tasks-table--pseudo .tasks-table__summary .tasks-table__cell:nth-child(7)
+{
+  max-width: 134px;
+  text-align: right;
+  justify-content: flex-end;
 
-	@include tablet {
-		max-width: none;
-		text-align: left;
-	}
+  @include tablet
+  {
+    max-width: none;
+    text-align: left;
+    justify-content: flex-start;
+  }
 }
 
-.tasks-table--pseudo .tasks-table__header-cell:nth-child(8),
-.tasks-table--pseudo .tasks-table__cell:nth-child(8) {
-	max-width: 75px;
-	text-align: right;
+.tasks-table--pseudo .tasks-table__header .tasks-table__cell:nth-child(8),
+.tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(8),
+.tasks-table--pseudo .tasks-table__summary .tasks-table__cell:nth-child(8)
+{
+  max-width: 75px;
+  text-align: right;
+  justify-content: flex-end;
 
-	@include tablet {
-		max-width: none;
-		text-align: left;
-	}
+  @include tablet
+  {
+    max-width: none;
+    text-align: left;
+    justify-content: flex-start;
+  }
 }
 
-.tasks-table--pseudo .tasks-table__header-cell {
-	font-weight: 700;
-	color: $text-secondary-color;
+.tasks-table--pseudo .tasks-table__header .tasks-table__cell
+{
+  font-weight: 700;
+  color: $text-secondary-color;
 }
 
 .tasks-table--pseudo .tasks-table__cell {

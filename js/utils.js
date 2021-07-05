@@ -1,7 +1,5 @@
 async function getDataFromUrl(url){
-  let response = null;
-
-  response = await fetch(url)
+  let response = await fetch(url)
     .then((response) => {
       return response.json();
     })
