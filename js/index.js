@@ -45,7 +45,7 @@ function initTable(){
       className: 'tasks-table__header',
     },
     summary: {
-      create: false,
+      create: true,
       className: 'tasks-table__summary',
       title: 'Sum',
     },
@@ -145,8 +145,6 @@ function initTable(){
   table.removeLoader = function(){
     this.wrapperElement.classList.remove('loading');
   }
-
-  table.setFieldsForSummary('totalTimeSpentByAll', 'myTimeSpentByPeriod');
 
   return table;
 }

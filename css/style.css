@@ -1391,7 +1391,8 @@ th {
 }
 
 .tasks-table--pseudo .tasks-table__header .tasks-table__cell,
-.tasks-table--pseudo .tasks-table__body .tasks-table__cell {
+.tasks-table--pseudo .tasks-table__body .tasks-table__cell,
+.tasks-table--pseudo .tasks-table__summary .tasks-table__cell {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1406,7 +1407,8 @@ th {
 
 @media screen and (max-width: 991px) {
   .tasks-table--pseudo .tasks-table__header .tasks-table__cell,
-  .tasks-table--pseudo .tasks-table__body .tasks-table__cell {
+  .tasks-table--pseudo .tasks-table__body .tasks-table__cell,
+  .tasks-table--pseudo .tasks-table__summary .tasks-table__cell {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
@@ -1414,55 +1416,64 @@ th {
 }
 
 .tasks-table--pseudo .tasks-table__header .tasks-table__cell:nth-child(1),
-.tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(1) {
+.tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(1),
+.tasks-table--pseudo .tasks-table__summary .tasks-table__cell:nth-child(1) {
   max-width: 160px;
 }
 
 @media screen and (max-width: 991px) {
   .tasks-table--pseudo .tasks-table__header .tasks-table__cell:nth-child(1),
-  .tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(1) {
+  .tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(1),
+  .tasks-table--pseudo .tasks-table__summary .tasks-table__cell:nth-child(1) {
     max-width: none;
   }
 }
 
 .tasks-table--pseudo .tasks-table__header .tasks-table__cell:nth-child(2),
-.tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(2) {
+.tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(2),
+.tasks-table--pseudo .tasks-table__summary .tasks-table__cell:nth-child(2) {
   max-width: 170px;
 }
 
 @media screen and (max-width: 991px) {
   .tasks-table--pseudo .tasks-table__header .tasks-table__cell:nth-child(2),
-  .tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(2) {
+  .tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(2),
+  .tasks-table--pseudo .tasks-table__summary .tasks-table__cell:nth-child(2) {
     max-width: none;
   }
 }
 
 .tasks-table--pseudo .tasks-table__header .tasks-table__cell:nth-child(3),
-.tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(3) {
+.tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(3),
+.tasks-table--pseudo .tasks-table__summary .tasks-table__cell:nth-child(3) {
   max-width: 150px;
 }
 
 @media screen and (max-width: 991px) {
   .tasks-table--pseudo .tasks-table__header .tasks-table__cell:nth-child(3),
-  .tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(3) {
+  .tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(3),
+  .tasks-table--pseudo .tasks-table__summary .tasks-table__cell:nth-child(3) {
     max-width: none;
   }
 }
 
 .tasks-table--pseudo .tasks-table__header .tasks-table__cell:nth-child(4),
-.tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(4) {
+.tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(4),
+.tasks-table--pseudo .tasks-table__summary .tasks-table__cell:nth-child(4) {
   max-width: 103px;
 }
 
 @media screen and (max-width: 991px) {
   .tasks-table--pseudo .tasks-table__header .tasks-table__cell:nth-child(4),
-  .tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(4) {
+  .tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(4),
+  .tasks-table--pseudo .tasks-table__summary .tasks-table__cell:nth-child(4) {
     max-width: none;
   }
 }
 
 .tasks-table--pseudo .tasks-table__header .tasks-table__cell:nth-child(5),
-.tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(5) {
+.tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(5),
+.tasks-table--pseudo .tasks-table__summary .tasks-table__cell:nth-child(5) {
   max-width: 113px;
   text-align: right;
   -webkit-box-pack: end;
@@ -1472,7 +1483,8 @@ th {
 
 @media screen and (max-width: 991px) {
   .tasks-table--pseudo .tasks-table__header .tasks-table__cell:nth-child(5),
-  .tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(5) {
+  .tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(5),
+  .tasks-table--pseudo .tasks-table__summary .tasks-table__cell:nth-child(5) {
     max-width: none;
     text-align: left;
     -webkit-box-pack: start;
@@ -1482,7 +1494,8 @@ th {
 }
 
 .tasks-table--pseudo .tasks-table__header .tasks-table__cell:nth-child(6),
-.tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(6) {
+.tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(6),
+.tasks-table--pseudo .tasks-table__summary .tasks-table__cell:nth-child(6) {
   max-width: 135px;
   text-align: right;
   -webkit-box-pack: end;
@@ -1492,7 +1505,8 @@ th {
 
 @media screen and (max-width: 991px) {
   .tasks-table--pseudo .tasks-table__header .tasks-table__cell:nth-child(6),
-  .tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(6) {
+  .tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(6),
+  .tasks-table--pseudo .tasks-table__summary .tasks-table__cell:nth-child(6) {
     max-width: none;
     text-align: left;
     -webkit-box-pack: start;
@@ -1502,7 +1516,8 @@ th {
 }
 
 .tasks-table--pseudo .tasks-table__header .tasks-table__cell:nth-child(7),
-.tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(7) {
+.tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(7),
+.tasks-table--pseudo .tasks-table__summary .tasks-table__cell:nth-child(7) {
   max-width: 134px;
   text-align: right;
   -webkit-box-pack: end;
@@ -1512,7 +1527,8 @@ th {
 
 @media screen and (max-width: 991px) {
   .tasks-table--pseudo .tasks-table__header .tasks-table__cell:nth-child(7),
-  .tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(7) {
+  .tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(7),
+  .tasks-table--pseudo .tasks-table__summary .tasks-table__cell:nth-child(7) {
     max-width: none;
     text-align: left;
     -webkit-box-pack: start;
@@ -1522,7 +1538,8 @@ th {
 }
 
 .tasks-table--pseudo .tasks-table__header .tasks-table__cell:nth-child(8),
-.tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(8) {
+.tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(8),
+.tasks-table--pseudo .tasks-table__summary .tasks-table__cell:nth-child(8) {
   max-width: 75px;
   text-align: right;
   -webkit-box-pack: end;
@@ -1532,7 +1549,8 @@ th {
 
 @media screen and (max-width: 991px) {
   .tasks-table--pseudo .tasks-table__header .tasks-table__cell:nth-child(8),
-  .tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(8) {
+  .tasks-table--pseudo .tasks-table__body .tasks-table__cell:nth-child(8),
+  .tasks-table--pseudo .tasks-table__summary .tasks-table__cell:nth-child(8) {
     max-width: none;
     text-align: left;
     -webkit-box-pack: start;
