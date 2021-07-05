@@ -1,60 +1,68 @@
-.visually-hidden 
-{
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  position: absolute;
-  width: 1px;
+.visually-hidden {
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	margin: -1px;
+	position: absolute;
+	width: 1px;
 }
 
-.margin-bottom-0
-{
-  margin-bottom: 0 !important;
+.mb-0 {
+	margin-bottom: 0;
 }
 
-.overflow-hidden
-{
-  overflow: hidden !important;
+.ml-25 {
+	margin-left: 25px;
 }
 
-.loading
-{
-  height: 320px;
-  max-height: 320px;
-  overflow: hidden;
-  pointer-events: none;
-  position: relative;
+.mr-12 {
+	margin-right: 12px;
+}
 
-  &::before
-  {
-    background-color: $layout-secondary-color;
-    border-radius: 7px;
-    border: 1px solid $layout-secondary-color-lighter;
-    bottom: 0;
-    content: "";
-    display: block;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 9;
-  }
+.pl-12 {
+	padding-left: 12px;
+}
 
-  &::after
-  {
-    background-image: url(../imgs/loader.gif);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    bottom: 0;
-    content: "";
-    height: 150px;
-    left: 0;
-    margin: auto;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 150px;
-    z-index: 10;
-  }
+.overflow-hidden {
+	overflow: hidden;
+}
+
+
+
+.loading {
+	height: 320px;
+	max-height: 320px;
+	overflow: hidden;
+	pointer-events: none;
+	position: relative;
+
+	&::before {
+		background-color: $layout-secondary-color;
+		border-radius: 7px;
+		border: 1px solid $layout-secondary-color-lighter;
+		bottom: 0;
+		content: '';
+		display: block;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 9;
+	}
+
+	&::after {
+		background-image: url(../imgs/loader.gif);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		bottom: 0;
+		content: '';
+		height: 150px;
+		left: 0;
+		margin: auto;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 150px;
+		z-index: 10;
+	}
 }

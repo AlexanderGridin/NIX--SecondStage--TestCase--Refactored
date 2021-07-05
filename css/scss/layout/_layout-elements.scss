@@ -1,21 +1,14 @@
-.container
-{
-  margin: auto;
-  max-width: 1340px;
-  padding: 0 10px;
-  position: relative;
-  width: 100%;
+.container {
+	margin: auto;
+	max-width: 1340px;
+	padding: 0 10px;
+	position: relative;
+	width: 100%;
 }
 
-.section
-{
-  padding: 20px 0;
-}
-
-.section__title
-{
-  color: $text-secondary-color;
-  margin: 0;
-  margin-bottom: 25px;
-  text-align: center;
+.wrapper {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
 }

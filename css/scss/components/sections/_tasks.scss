@@ -1,9 +1,15 @@
-.tasks__section-title
-{
-  display: none;
+.tasks {
+	padding: 20px 0px;
+}
 
-  @include tablet
-  {
-    display: block;
-  }
+.tasks__title {
+	display: none;
+	color: $text-secondary-color;
+	margin: 0;
+	margin-bottom: 25px;
+	text-align: center;
+
+	@include tablet {
+		display: block;
+	}
 }

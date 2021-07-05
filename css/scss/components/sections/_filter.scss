@@ -1,74 +1,56 @@
-.filter
-{
-  padding-top: 40px;
+.filter {
+	padding: 40px 0 20px 0;
 }
 
-.filter__form
-{
-  align-items: flex-end;
-  display: flex;
-  flex-wrap: wrap;
+.filter__form {
+	align-items: flex-end;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0px 0px 20px 0px;
 
-  @include tablet
-  {
-    align-items: flex-start;
-    flex-direction: column;
-  }
+	@include tablet {
+		align-items: flex-start;
+		flex-direction: column;
+	}
 }
 
-.filter__form > .form__item + .form__item
-{
-  margin-left: 24px;
-
-  @include tablet
-  {
-    margin-left: 0;
-    margin-top: 10px;
-  }
+.filter__item-select + .filter__item-select {
+	@include tablet {
+		margin: 25px 0;
+	}
 }
 
-.filter__form .form__item-select,
-.filter__form .form__select
-{
-  max-width: 200px;
-  width: 100%;
+.filter__item-select,
+.filter__select {
+	width: 200px;
 
-  @include tablet
-  {
-    max-width: none;
-  }
+	@include tablet {
+		max-width: none;
+		width: 100%;
+	}
 }
 
-.filter__form .form__item-checkbox
-{
-  transform: translateY(-50%);
+.filter__item-checkbox {
+	display: flex;
+	align-items: center;
+	margin: 0px 0px 0px 24px;
+	transform: translateY(-50%);
 
-  @include tablet
-  {
-    transform: none;
-  }
+	@include tablet {
+		transform: none;
+		margin: 0px 0px 20px 0px;
+	}
 }
 
-.filter__form .form__actions
-{
-  align-items: center;
-  display: flex;
-  margin-left: 24px;
+.filter__actions {
+	align-items: center;
+	display: flex;
+	margin-left: 24px;
 
-  @include tablet
-  {
-    margin-left: 0;
-    padding-top: 10px;
-    width: 100%;
-  }
+	@include tablet {
+		margin-left: 0;
+		padding-top: 10px;
+		width: 100%;
+	}
 }
 
-.filter__form .form__actions .button
-{
-  display: block;
-}
-
-.filter__form .form__actions .button + .button
-{
-  margin-left: 25px;
-}

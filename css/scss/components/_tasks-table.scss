@@ -1,323 +1,264 @@
 // tasks-table
-.tasks-table
-{
-  transition: 0.4s;
+.tasks-table {
+	transition: 0.4s;
 }
 
 // tasks-table__sorting-button
-.tasks-table__sorting-button
-{
-  align-items: center;
-  background: none;
-  border-radius: 0;
-  border: none;
-  color: $text-secondary-color;
-  display: flex;
-  font-weight: 600;
-  line-height: 1.3;
-  text-align: right;
+.tasks-table__sorting-button {
+	align-items: center;
+	background: none;
+	border-radius: 0;
+	border: none;
+	color: $text-secondary-color;
+	display: flex;
+	font-weight: 600;
+	line-height: 1.3;
+	text-align: right;
+	cursor: pointer;
 
-  &:hover
-  {
-    color: $layout-accent-color;
-    cursor: pointer;
-    text-decoration: underline;
-  }
+	&:hover {
+		color: $layout-accent-color;
+		cursor: pointer;
+		text-decoration: underline;
+	}
 }
 
-.tasks-table__sorting-button-icon
-{
-  flex-shrink: 0;
-  margin-left: 4px;
+.tasks-table__sorting-button-icon {
+	flex-shrink: 0;
+	margin-left: 4px;
 }
 
-.tasks-table__sorting-button.sorted .tasks-table__sorting-button-icon path
-{
-  fill: $success-color !important;
+.tasks-table__sorting-button.sorted .tasks-table__sorting-button-icon path {
+	fill: $success-color !important;
 }
 
 // tasks-table__footer
-.tasks-table__footer
-{
-  font-size: 1rem;
-  padding-left: 30px;
-  padding-top: 20px;
+.tasks-table__footer {
+	font-size: 1rem;
+	padding-left: 30px;
+	padding-top: 20px;
+	align-items: center;
+	display: flex;
 
-  @include tablet
-  {
-    padding-left: 0;
-  }
+	@include tablet {
+		padding-left: 0;
+		flex-direction: column;
+	}
 }
 
-.tasks-table__footer-flex-container
-{
-  align-items: center;
-  display: flex;
+.tasks-table__footer-item + .tasks-table__footer-item {
+	margin-left: 12px;
 
-  @include tablet
-  {
-    flex-direction: column;
-  }
-}
-
-.tasks-table__footer-flex-item + .tasks-table__footer-flex-item
-{
-  margin-left: 12px;
-
-  @include tablet
-  {
-    margin-left: 0;
-  }
+	@include tablet {
+		margin-left: 0;
+	}
 }
 
 // tasks-table--pseudo
-.tasks-table--pseudo
-{
-  font-size: 0.85rem;
-  width: 100%;
+.tasks-table--pseudo {
+	font-size: 0.85rem;
+	width: 100%;
 
-  @include tablet
-  {
-    font-size: 1rem;
-  }
+	@include tablet {
+		font-size: 1rem;
+	}
 }
 
-.tasks-table--pseudo .tasks-table__header
-{
-  margin-bottom: 8px;
+.tasks-table--pseudo .tasks-table__header {
+	margin-bottom: 8px;
 
-  @include tablet
-  {
-    display: none;
-  }
+	@include tablet {
+		display: none;
+	}
 }
 
-.tasks-table--pseudo .tasks-table__header .tasks-table__row
-{
-  background-color: $table-header-bg;
+.tasks-table--pseudo .tasks-table__header .tasks-table__row {
+	background-color: $table-header-bg;
 }
 
-.tasks-table--pseudo .tasks-table__body
-{
-  @include tablet
-  {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
+.tasks-table--pseudo .tasks-table__body {
+	@include tablet {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
 }
 
-.tasks-table--pseudo .tasks-table__body .tasks-table__row:nth-child(even)
-{
-  background-color: $table-row-even-bg;
+.tasks-table--pseudo .tasks-table__body .tasks-table__row:nth-child(even) {
+	background-color: $table-row-even-bg;
 }
 
-.tasks-table--pseudo .tasks-table__body .tasks-table__row:nth-child(odd)
-{
-  background-color: $table-row-odd-bg;
+.tasks-table--pseudo .tasks-table__body .tasks-table__row:nth-child(odd) {
+	background-color: $table-row-odd-bg;
 
-  @include tablet
-  {
-    margin-right: 15px;
-  }
+	@include tablet {
+		margin-right: 15px;
+	}
 
-  @include phone
-  {
-    margin-right: 0;
-  }
+	@include phone {
+		margin-right: 0;
+	}
 }
 
-.tasks-table--pseudo .tasks-table__row + .tasks-table__row
-{
-  margin-top: 8px;
+.tasks-table--pseudo .tasks-table__row + .tasks-table__row {
+	margin-top: 8px;
 
-  @include tablet
-  {
-    margin-top: 0;
-  }
+	@include tablet {
+		margin-top: 0;
+	}
 }
 
-.tasks-table--pseudo .tasks-table__row
-{
-  border-radius: 7px;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 30px;
+.tasks-table--pseudo .tasks-table__row {
+	border-radius: 7px;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 30px;
 
-  @include tablet
-  {
-    display: block;
-    margin-bottom: 15px;
-    padding: 30px;
-    width: 49%;
-  }
+	@include tablet {
+		display: block;
+		margin-bottom: 15px;
+		padding: 30px;
+		width: 49%;
+	}
 
-  @include phone
-  {
-    padding: 30px 15px;
-    width: 100%;
-  }
+	@include phone {
+		padding: 30px 15px;
+		width: 100%;
+	}
 }
 
 .tasks-table--pseudo .tasks-table__header-cell,
-.tasks-table--pseudo .tasks-table__cell
-{
-  align-items: center;
-  display: flex;
-  margin: 0 5px;
-  max-width: 12.5%;
-  padding: 12px 0;
-  width: 100%;
+.tasks-table--pseudo .tasks-table__cell {
+	align-items: center;
+	display: flex;
+	margin: 0 5px;
+	max-width: 12.5%;
+	padding: 12px 0;
+	width: 100%;
 
-  @include tablet
-  {
-    align-items: flex-start;
-  }
+	@include tablet {
+		align-items: flex-start;
+	}
 }
 
 .tasks-table--pseudo .tasks-table__header-cell:nth-child(1),
-.tasks-table--pseudo .tasks-table__cell:nth-child(1)
-{
-  max-width: 160px;
+.tasks-table--pseudo .tasks-table__cell:nth-child(1) {
+	max-width: 160px;
 
-  @include tablet
-  {
-    max-width: none;
-  }
+	@include tablet {
+		max-width: none;
+	}
 }
 
 .tasks-table--pseudo .tasks-table__header-cell:nth-child(2),
-.tasks-table--pseudo .tasks-table__cell:nth-child(2)
-{
-  max-width: 170px;
+.tasks-table--pseudo .tasks-table__cell:nth-child(2) {
+	max-width: 170px;
 
-  @include tablet
-  {
-    max-width: none;
-  }
+	@include tablet {
+		max-width: none;
+	}
 }
 
 .tasks-table--pseudo .tasks-table__header-cell:nth-child(3),
-.tasks-table--pseudo .tasks-table__cell:nth-child(3)
-{
-  max-width: 150px;
+.tasks-table--pseudo .tasks-table__cell:nth-child(3) {
+	max-width: 150px;
 
-  @include tablet
-  {
-    max-width: none;
-  }
+	@include tablet {
+		max-width: none;
+	}
 }
 
 .tasks-table--pseudo .tasks-table__header-cell:nth-child(4),
-.tasks-table--pseudo .tasks-table__cell:nth-child(4)
-{
-  max-width: 103px;
+.tasks-table--pseudo .tasks-table__cell:nth-child(4) {
+	max-width: 103px;
 
-  @include tablet
-  {
-    max-width: none;
-  }
+	@include tablet {
+		max-width: none;
+	}
 }
 
 .tasks-table--pseudo .tasks-table__header-cell:nth-child(5),
-.tasks-table--pseudo .tasks-table__cell:nth-child(5)
-{
-  max-width: 113px;
-  text-align: right;
+.tasks-table--pseudo .tasks-table__cell:nth-child(5) {
+	max-width: 113px;
+	text-align: right;
 
-  @include tablet
-  {
-    max-width: none;
-    text-align: left;
-  }
+	@include tablet {
+		max-width: none;
+		text-align: left;
+	}
 }
 
 .tasks-table--pseudo .tasks-table__header-cell:nth-child(6),
-.tasks-table--pseudo .tasks-table__cell:nth-child(6)
-{
-  max-width: 135px;
-  text-align: right;
+.tasks-table--pseudo .tasks-table__cell:nth-child(6) {
+	max-width: 135px;
+	text-align: right;
 
-  @include tablet
-  {
-    max-width: none;
-    text-align: left;
-  }
+	@include tablet {
+		max-width: none;
+		text-align: left;
+	}
 }
 
 .tasks-table--pseudo .tasks-table__header-cell:nth-child(7),
-.tasks-table--pseudo .tasks-table__cell:nth-child(7)
-{
-  max-width: 134px;
-  text-align: right;
+.tasks-table--pseudo .tasks-table__cell:nth-child(7) {
+	max-width: 134px;
+	text-align: right;
 
-  @include tablet
-  {
-    max-width: none;
-    text-align: left;
-  }
+	@include tablet {
+		max-width: none;
+		text-align: left;
+	}
 }
 
 .tasks-table--pseudo .tasks-table__header-cell:nth-child(8),
-.tasks-table--pseudo .tasks-table__cell:nth-child(8)
-{
-  max-width: 75px;
-  text-align: right;
+.tasks-table--pseudo .tasks-table__cell:nth-child(8) {
+	max-width: 75px;
+	text-align: right;
 
-  @include tablet
-  {
-    max-width: none;
-    text-align: left;
-  }
+	@include tablet {
+		max-width: none;
+		text-align: left;
+	}
 }
 
-.tasks-table--pseudo .tasks-table__header-cell
-{
-  font-weight: 700;
-  color: $text-secondary-color;
+.tasks-table--pseudo .tasks-table__header-cell {
+	font-weight: 700;
+	color: $text-secondary-color;
 }
 
-.tasks-table--pseudo .tasks-table__cell
-{
-  @include tablet
-  {
-    width: 100%;
-    max-width: 100%;
-  }
+.tasks-table--pseudo .tasks-table__cell {
+	@include tablet {
+		width: 100%;
+		max-width: 100%;
+	}
 }
 
-.tasks-table--pseudo .tasks-table__cell-label
-{
-  color: $text-secondary-color;
-  display: none;
-  font-weight: 700;
-  margin-right: 25px;
-  max-width: 150px;
-  width: 100%;
+.tasks-table--pseudo .tasks-table__cell-label {
+	color: $text-secondary-color;
+	display: none;
+	font-weight: 700;
+	margin-right: 25px;
+	max-width: 150px;
+	width: 100%;
 
-  @include tablet
-  {
-    display: block;
-  }
+	@include tablet {
+		display: block;
+	}
 }
 
-.tasks-table--pseudo .tasks-table__cell-content
-{
-  width: 100%;
+.tasks-table--pseudo .tasks-table__cell-content {
+	width: 100%;
 }
 
-.tasks-table--pseudo .tasks-table__summary
-{
-  color: $text-secondary-color;
-  margin-top: 8px;
+.tasks-table--pseudo .tasks-table__summary {
+	color: $text-secondary-color;
+	margin-top: 8px;
 
-  @include tablet
-  {
-    display: none;
-  }
+	@include tablet {
+		display: none;
+	}
 }
 
-.tasks-table--pseudo .tasks-table__summary .tasks-table__row
-{
-  background-color: $table-header-bg;
+.tasks-table--pseudo .tasks-table__summary .tasks-table__row {
+	background-color: $table-header-bg;
 }
