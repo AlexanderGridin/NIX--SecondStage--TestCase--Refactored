@@ -15,43 +15,49 @@ function main(){
 
 // Functions
 function initDynamicElements(){
+  let dataUrl = 'http://f0541354.xsph.ru/tasks';
   let table = initTable();
-  table.setLoader();
-  console.log(table);
-
   let pagination = initPagination();
-  console.log(pagination);
-
+  
+  table.setLoader();
   table.footer.element.append(pagination.wrapper);
 
+  /**
+   * Здесь и далее в 3-ёх функциях идет одинаковый коллбэк.
+   * Я не успел придумать, как грамотно его обернуть.
+   * ...Гридин.
+   */
   pagination.nextPage((dataUrl) => {
     table.setLoader();
-    console.log(dataUrl)
 
     getDataFromUrl(dataUrl).then((data) => {
-      table.updateBody(data).removeLoader();
+      table.updateBody(data)
+        .updateSummary(data)
+        .removeLoader();
     });
   });
 
   pagination.prevPage((dataUrl) => {
     table.setLoader();
-    console.log(dataUrl)
 
     getDataFromUrl(dataUrl).then((data) => {
-      table.updateBody(data).removeLoader();
+      table.updateBody(data)
+        .updateSummary(data)
+        .removeLoader();
     });
   });
 
   pagination.selectPage((dataUrl) => {
     table.setLoader();
-    console.log(dataUrl)
 
     getDataFromUrl(dataUrl).then((data) => {
-      table.updateBody(data).removeLoader();
+      table.updateBody(data)
+        .updateSummary(data)
+        .removeLoader();
     });
   });
 
-  let dataUrl = 'http://f0541354.xsph.ru/tasks';
+  // First load
   getDataFromUrl(dataUrl).then((data) => {
     table.build(data).removeLoader();
   });
@@ -65,6 +71,11 @@ function initTable(){
     </svg>
   `;
 
+  /**
+   * Основная идея была в том, чтобы сделать данную иннициализацию похожей на иннициализацию JS-плагина.
+   * Однако, если какой-то из элементов конфига убрать, таблица может сломаться, т.к. не успел добавить в класс нужные проверки...
+   * ...Гридин.
+   */
   let table = new Table('#tasks-table', {
     tagName: 'div',
     classNames: {
@@ -183,6 +194,11 @@ function initTable(){
 }
 
 function initPagination(){
+  /**
+   * Основная идея была в том, чтобы сделать данную иннициализацию похожей на иннициализацию JS-плагина.
+   * Однако, если какой-то из элементов конфига убрать, пагинация может сломаться, т.к. не успел добавить в класс нужные проверки...
+   * ...Гридин.
+   */
   let pagination = new Pagination({
     selectItemsPerPage: true,
     summary: true,

@@ -5,6 +5,10 @@
  * ...Гридин.
  */
 
+/**
+ * Также, не успел нормально упорядочить методы...
+ * ...Гридин.
+ */
 export default class TableItemEntity{
   constructor({
     name,

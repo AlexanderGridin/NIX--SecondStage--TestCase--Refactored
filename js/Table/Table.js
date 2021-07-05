@@ -9,6 +9,11 @@ import {utils} from './utils.js';
  * Очень интересно было бы узнать, применяется ли такой подход на реальных проектах + узнать свои ошибки при применении данного подхода, т.к. подозреваю, что местами она избыточна, но на дополнительный рефакторинг времени у меня не осталось :(
  * ...Гридин.
  */
+
+/**
+ * Также, не успел нормально упорядочить методы...
+ * ...Гридин.
+ */
 class Table{
   constructor(wrapperSelector, {
     tagName,
@@ -262,8 +267,12 @@ class Table{
       ._updateData(data)
       ._buildBody(data);
 
-    if(this.summary){
+    if(this.summary.element){
       this.summary.element.before(this.body.element);
+    }
+
+    if(!this.summary.element){
+      this.wrapperElement.append(this.body.element);
     }
 
     return this;
@@ -284,6 +293,29 @@ class Table{
     }
 
     this.body.rows.length = 0;
+    return this;
+  }
+
+  updateSummary(data){
+    this._clearSummary();
+
+    this.summary.element = document.createElement(this.tagName);
+    this.summary.element.classList.add(this.summary.className);
+
+    this._buildSummary(data);
+
+    this.body.element.after(this.summary.element);
+
+    return this;
+  }
+
+  _clearSummary(){
+    if(this.summary.create){
+      this.summary.element.remove();
+      this.summary.element = null;
+      this.row = null;
+    }
+
     return this;
   }
 

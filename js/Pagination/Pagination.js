@@ -7,6 +7,10 @@ import DOMObject from './DOMObject.js';
  * ...Гридин.
  */
 
+/**
+ * Также, не успел нормально упорядочить методы...
+ * ...Гридин.
+ */
 export default class Pagination{
   wrapper;
   DOMObject;
