@@ -4,15 +4,13 @@ import TableCell from './TableCell.js';
 import {utils} from './utils.js';
 
 /**
- * Костя, в этом и других классах я использовал много деструктуризации.
+ * Костя, в этом и других классах использовано много деструктуризации.
  * Основная идея - наглядное представление всех свойств класса и параметров конструктора.
- * Очень интересно было бы узнать, применяется ли такой подход на реальных проектах + узнать свои ошибки при применении данного подхода, т.к. подозреваю, что местами она избыточна, но на дополнительный рефакторинг времени у меня не осталось :(
- * ...Гридин.
+ * Очень интересно было бы узнать, применяется ли такой подход на реальных проектах + узнать свои ошибки при применении данного подхода, т.к. подозреваем, что местами она избыточна, но на дополнительный рефакторинг времени не осталось :(
  */
 
 /**
- * Также, не успел нормально упорядочить методы...
- * ...Гридин.
+ * Также, не успели нормально упорядочить методы...
  */
 class Table{
   constructor(wrapperSelector, {
@@ -463,35 +461,6 @@ class Table{
       case 'desc':
         button.setAttribute('data-sorting-direction', 'ASC');
         break;
-    }
-
-    return this;
-  }
-
-  // ! OLD CODE
-  // TODO
-  updateTableSummary(){
-    this.clearTableSummary();
-
-    let tableFooter = this.wrapperElement.querySelector('.tasks-table__footer');
-    let newTableSummary = this.createTableSummary(this.data);
-
-    if(tableFooter){
-      tableFooter.before(newTableSummary);
-    }
-
-    if(!tableFooter){
-      this.wrapperElement.append(newTableSummary);
-    }
-
-    return this;
-  }
-
-  clearTableSummary(){
-    let tableSummary = this.wrapperElement.querySelector('.tasks-table__summary');
-
-    if(tableSummary){
-      tableSummary.remove();
     }
 
     return this;
